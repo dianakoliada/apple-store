@@ -1,0 +1,59 @@
+$bg-color: #fafafa;
+$primary-color: #000;
+$secondary-color: #444448;
+$footer-bg-color: #f7f7f7;
+$hover-main-color: #0B60E7;
+$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-weights: (
+   "regular": 500,
+   "medium": 600,
+   "bold": 700
+);
+
+@function weight($weight-name) {
+   @return map-get($font-weights, $weight-name);
+}
+
+@mixin transition-ease {
+   transition: all .5s ease-in-out;
+}
+
+@mixin media-sm {
+   @media screen and (max-width: 548px) {
+      @content;
+   }
+}
+
+@mixin media-md {
+   @media screen and (max-width: 1074px) {
+      @content;
+   }
+}
+
+@mixin media-xl {
+   @media screen and (max-width: 1600px) {
+      @content;
+   }
+}
+
+@mixin displayFlex($justContent, $alignItems, $direction) {
+   display: flex;
+   justify-content: $justContent;
+   align-items: $alignItems;
+   flex-direction: $direction;
+}
+
+@mixin flexCenter($direction) {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: $direction;
+}
+
+@mixin flexStart($direction) {
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   flex-direction: $direction;
+}
+

@@ -1,0 +1,62 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   // outline: 1px solid red;
+}
+
+body {
+   background-color: $bg-color;
+   font-family: $font-stack;
+   font-size: 1rem;
+   font-weight: weight(regular);
+   line-height: 1.6;
+   height: 100vh;
+   color: $secondary-color;
+}
+
+h1, h2, h3 {
+   font-weight: weight(bold);
+}
+
+a {
+   color: $secondary-color;
+   text-decoration: none;
+   display: inline-flex;
+   transition: .25s;
+   font-size: 1.1rem;
+
+   &:hover {
+      color: $hover-main-color;
+   }
+}
+
+svg {
+   width: 1em;
+   height: 1em;
+   position: relative;
+}
+
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+
+.container-fill {
+   max-width: 1920px;
+   margin: 0 auto;
+   padding: 0 16px;
+}
+
+.hide {
+   display: none;
+}
+
+.success {
+   margin: 30px auto;
+   font-size: 30px;
+   font-weight: weight(bold);
+   color: #2dd36f;
+   text-align: center;
+}

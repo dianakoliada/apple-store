@@ -1,0 +1,114 @@
+header {
+   width: 100%;
+   margin-top: 3rem;
+   .navigation__hold {
+      outline: 1px solid red;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .navigation__left,
+      .navigation__right {
+         max-width: 40%;
+      }
+
+      .navigation__left {
+         position: relative;
+         .menu-btn {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            left: 1px;
+            top: -7px;
+            height: 20px;
+            width: 28px;
+            cursor: pointer;
+            @include transition-ease;
+            
+            &__burger {
+               position: absolute;
+               right: 0;
+               top: 0.5rem;
+               width: 28px;
+               height: 3px;
+               background-color: $secondary-color;
+               @include transition-ease;
+
+               &::before {
+                  content: '';
+                  position: absolute;
+                  top: -8px;
+                  width: 28px;
+                  height: 3px;
+                  background-color: $secondary-color;
+                  @include transition-ease;
+               }
+         
+               &::after {
+                  content: '';
+                  position: absolute;
+                  top: 8px;
+                  width: 20px;
+                  height: 3px;
+                  background-color: $secondary-color;
+                  @include transition-ease;
+               }
+
+               &.open {
+                  transform: rotate(720deg);
+                  background-color: transparent;
+
+                  &::before {
+                     transform: rotate(45deg) translate(5px, 8px);
+                  }
+         
+                  &::after {
+                     width: 28px;
+                     transform: rotate(-45deg) translate(3px, -7px);
+                  }
+               }
+            }
+         }
+         .menu-nav {
+            display: flex;
+            gap: 1rem;
+         }
+
+      }
+
+      .navigation__right {
+         .navigation__item-list {
+            display: flex;
+            justify-content: flex-end;
+            column-gap: 1.8rem;
+
+            .navigation__item-link {
+               display: flex;
+               text-align: center;
+               justify-content: flex-end;
+               position: relative;
+
+               &:hover {
+                  transform: scale(1.15);
+               }
+            }
+         }
+      }
+
+      .navigation__middle {
+         width: 20%;
+         text-align: center;
+      }
+   }
+}
+
+.logo {
+   font-size: 1.7rem;
+   font-weight: weight(bold);
+   white-space: nowrap;
+   transform: scale(1);
+   
+   &:hover {
+      transform: scale(1.1);
+   }
+}

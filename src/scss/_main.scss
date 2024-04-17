@@ -1,0 +1,245 @@
+main {
+   .catalog{
+      .catalog__header {
+         margin: 4rem 0;
+         display: flex;
+         justify-content: space-between;
+   
+         .catalog__select-category {
+            position: relative;
+   
+            .dropdown-btn {
+               color: $secondary-color;
+               cursor: pointer;
+               position: relative;
+               z-index: 2;
+               padding-right: 28px;
+               display: flex;
+               align-items: flex-start;
+               font-size: 26px;
+               font-weight: weight(bold);
+               
+               &::after {
+                  content: '\203A';
+                  position: absolute;
+                  top: -6px;
+                  left: 8.1rem;
+                  transform: rotate(90deg);
+                  font-size: 150%;
+                  font-weight: weight(bold);
+               }
+            }
+            .dropdown-content {
+               transition: 0.25s;
+               opacity: 1;
+               transform: scale(0);
+               padding: 16px 14px;
+               position: absolute;
+               top: 2rem;
+               left: 0;
+               background-color: #ffffff;
+               min-width: 160px;
+               z-index: 1;
+               box-shadow: 0 5px 22px 0 rgba(208, 219, 229, .62), 0 2px 3px 0 rgba(107, 132, 160, .18), 0 5px 5px 0 rgba(237, 239, 242, .36);
+               border-radius: 15px;
+            
+               .dropdown-item {
+                  display: block;
+                  padding: 8px 16px;
+                  text-decoration: none;
+                  transition: 0.3s;
+                  font-weight: weight(medium);
+                  font-size: 1rem;
+                  min-width: 12.5rem;
+                  border-radius: 10px;
+               }
+            }
+            
+            .show {
+               opacity: 1;
+               transform: scale(100%);
+            }
+         }
+   
+         .catalog__products-sum {
+            color: $secondary-color;
+            font-size: 1.3rem;
+            font-weight: weight(bold);
+         }
+      }
+   }
+
+   .hot-offers {
+      margin: 5rem 0;
+
+      .hot-offers__title {
+         .title-square__icon {
+            font-size: 40px;
+            line-height: 1;
+            padding: 1rem 0 .4rem 0;
+            color: #ff0000;
+         }
+      }
+
+      .hot-offers__cards {
+         margin-top: 5rem;
+      }
+   }
+
+   .gallery {
+      margin: 100px 0;
+
+      .title-square::after {
+         top: -1rem;
+         z-index: 1;
+         width: 2px;
+         height: 60px;
+         background-color: #fee085;
+      }
+
+      .title-square__small {
+         margin-top: 3.1rem;
+      }
+
+      .gallery__items {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: center;
+         gap: 30px;
+         margin: 80px 0 100px;
+      }
+
+      .gallery__item {
+         position: relative;
+      }
+
+      .gallery__item-hover-box {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(11, 95, 231, 0.332);
+         border-radius: 20px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         transition: .45s;
+         font-size: 20px;
+         text-shadow: 0 0 15px rgba(254, 254, 254, 0.8);
+         color: #fff;
+         opacity: 0;
+
+         &:hover {
+            opacity: 1;
+         }
+      }
+
+      .gallery__item-img {
+         border-radius: 20px;
+         display: block;
+         box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.14);
+      }
+
+   }
+}
+
+main {
+   .title-square {
+      position: relative;
+      min-height: 11rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+   
+      &::before {
+         width: 94px;
+         height: 150px;
+         border: 5px solid #e9ecef;
+         border-radius: 8px; 
+      }
+   
+      .title-square__small {
+         z-index: 1;
+         font-size: 15px;
+         font-weight: weight(regular);
+         color: #6c757d;
+      }
+   
+      .title-square__main {
+         z-index: 1;
+         font-size: 30px;
+         text-transform: uppercase;
+         font-weight: weight(bold);
+      }
+   }
+
+   .title-square::before,
+   .title-square::after {
+      content: '';
+      z-index: 0;
+      position: absolute;
+      top: 13px;
+      left: 50%;
+      transform: translate(-50%, 0);
+   }
+   
+   .catalog,
+   .hot-offers {
+      .catalog__content,
+      .hot-offers__cards {
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
+         flex-wrap: wrap;
+         gap: 35px;
+   
+         .card-product {
+            @include flexCenter(column);
+            width: 15rem;
+            padding: 0 15px;
+            background-color: $bg-color;
+            box-shadow: 0 5px 22px 0 rgba(208, 219, 229, .62), 0 2px 3px 0 rgba(107, 132, 160, .18), 0 5px 5px 0 rgba(237, 239, 242, .36);
+   
+            .card-product__img-hold {
+               max-height: 17.5rem;
+               margin-bottom: .8rem;
+               overflow: hidden;
+               
+               img {
+                  width: 100%;
+               }
+            }
+         }
+   
+         .card-product__text-hold {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            position: relative;
+            padding-right: 3.1rem;
+            margin-bottom: 2.5rem;
+   
+            .card-product__btn-add {
+               transition: .25s;
+               position: absolute;
+               top: -10px;
+               right: 0;
+               padding: 14px 12px 14px 14px;
+               font-size: 18px;
+   
+               &:hover {
+                  transform: scale(1.2);
+               }
+            }
+         }
+      }
+   }
+}
+
+
+
+

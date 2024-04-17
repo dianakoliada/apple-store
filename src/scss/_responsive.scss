@@ -8,9 +8,7 @@
             .nav {
                position: relative;
                .menu-nav {
-                  position: absolute;
-                  top: 19px;
-                  left: 23px;
+                  @include positionLeft(absolute, 19px, 23px, 4);
                   transition: 0.25s;
                   flex-direction: column;
                   opacity: 1;
@@ -18,8 +16,7 @@
                   padding: 2rem;
                   background-color: #ffffff;
                   min-width: 12rem;
-                  z-index: 4;
-                  box-shadow: 0 5px 22px 0 rgba(208, 219, 229, .62), 0 2px 3px 0 rgba(107, 132, 160, .18), 0 5px 5px 0 rgba(237, 239, 242, .36);
+                  box-shadow: $box-shadow-main;
                   border-radius: 15px;
                }
                .show {

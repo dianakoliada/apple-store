@@ -2,56 +2,45 @@ header {
    width: 100%;
    margin-top: 3rem;
    .navigation__hold {
-      outline: 1px solid red;
       display: flex;
       justify-content: space-between;
       align-items: center;
       
       .navigation__left,
       .navigation__right {
+         width: 26.8rem;
          max-width: 40%;
       }
 
       .navigation__left {
          position: relative;
          .menu-btn {
-            display: none;
-            position: absolute;
-            z-index: 1;
-            left: 1px;
-            top: -7px;
-            height: 20px;
-            width: 28px;
-            cursor: pointer;
+            @include positionLeft(absolute, -7px, 1px, 1);
             @include transition-ease;
+            @include size(28px, 20px);
+            display: none;
+            cursor: pointer;
             
             &__burger {
-               position: absolute;
-               right: 0;
-               top: 0.5rem;
-               width: 28px;
-               height: 3px;
-               background-color: $secondary-color;
+               @include positionRight(absolute, .5rem, 0, 0);
                @include transition-ease;
+               @include size(28px, 3px);
+               background-color: $secondary-color;
 
                &::before {
                   content: '';
-                  position: absolute;
-                  top: -8px;
-                  width: 28px;
-                  height: 3px;
-                  background-color: $secondary-color;
+                  @include positionLeft(absolute, -8px, 0, 0);
                   @include transition-ease;
+                  @include size(28px, 3px);
+                  background-color: $secondary-color;
                }
          
                &::after {
-                  content: '';
-                  position: absolute;
-                  top: 8px;
-                  width: 20px;
-                  height: 3px;
-                  background-color: $secondary-color;
+                  @include positionLeft(absolute, 8px, 0, 0);
                   @include transition-ease;
+                  @include size(20px, 3px);
+                  content: '';
+                  background-color: $secondary-color;
                }
 
                &.open {

@@ -1,14 +1,16 @@
-$bg-color: #fafafa;
+$bg-color: #fff;
 $primary-color: #000;
 $secondary-color: #444448;
 $footer-bg-color: #f7f7f7;
 $hover-main-color: #0B60E7;
 $font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$box-shadow-main: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 $font-weights: (
    "regular": 500,
    "medium": 600,
    "bold": 700
 );
+
 
 @function weight($weight-name) {
    @return map-get($font-weights, $weight-name);
@@ -36,13 +38,6 @@ $font-weights: (
    }
 }
 
-@mixin displayFlex($justContent, $alignItems, $direction) {
-   display: flex;
-   justify-content: $justContent;
-   align-items: $alignItems;
-   flex-direction: $direction;
-}
-
 @mixin flexCenter($direction) {
    display: flex;
    justify-content: center;
@@ -55,5 +50,24 @@ $font-weights: (
    justify-content: flex-start;
    align-items: flex-start;
    flex-direction: $direction;
+}
+
+@mixin positionLeft($position, $top, $left, $zIndex) {
+   position: $position;
+   top: $top;
+   left: $left;
+   z-index: $zIndex;
+}
+
+@mixin positionRight($position, $top, $right, $zIndex) {
+   position: $position;
+   top: $top;
+   right: $right;
+   z-index: $zIndex;
+}
+
+@mixin size($width, $height) {
+   width: $width;
+   height: $height;
 }
 

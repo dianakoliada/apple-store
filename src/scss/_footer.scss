@@ -26,11 +26,10 @@ footer {
 
          .social__item {
             @include flexCenter(row);
+            @include size(2.25rem, 2.25rem);
             border: 1px solid #f9f9f9;
             background-color: #fbfbfb;
             border-radius: 50%;
-            height: 2.25rem;
-            width: 2.25rem;
             transition: .5s ease-in-out;
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1);
             &:hover {

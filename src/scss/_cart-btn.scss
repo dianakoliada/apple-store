@@ -14,8 +14,7 @@
 
    .cart-added-list__btn {
       @include flexCenter(row);
-      width: 50px;
-      height: 50px;
+      @include size(50px, 50px);
       background-color: #000;
       color: #fff;
       border: 1px solid transparent;
@@ -44,7 +43,7 @@
       right: 1.4rem;
       position: absolute;
       background-color: #fff;
-      box-shadow: 0 5px 22px 0 rgba(208, 219, 229, .62), 0 2px 3px 0 rgba(107, 132, 160, .18), 0 5px 5px 0 rgba(237, 239, 242, .36);
+      box-shadow: $box-shadow-main;
       padding: 15px;
       border-radius: 15px;
       max-height: 300px;
@@ -55,8 +54,7 @@
          @include flexStart(row);
          gap: 1rem;
          min-height: 4.125rem;
-         margin-top: 1rem;
-         margin-bottom: 12px;
+         margin: 1rem 0 .75rem 0;
          padding-bottom: 12px;
          border-bottom: 1px solid #dedede;
          &:last-child {
@@ -119,9 +117,8 @@
          }
          
          .cart-added-list__item-btn-delete {
+            @include size(21px, 21px);
             border-radius: 6px 0 7px 0;
-            height: 21px;
-            width: 21px;
             &:hover {
                color: #ff4d4d;
             }
@@ -138,13 +135,11 @@
          }
 
          .cart-added-list__item-count {
-            position: absolute;
+            @include positionRight(absolute, 20px, 3px, 0);
             font-size: 1rem;
             font-weight: weight(medium);
             color: #6C798E;
             text-align: center;
-            top: 20px;
-            right: 3px;
          }
       }
    }

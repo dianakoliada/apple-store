@@ -1,0 +1,42 @@
+article {
+   color: $primary-color;
+   background-color: #fff;
+   h2 {
+      font-size: 1.9em;
+      margin: 2rem 0;
+   }
+   h3 {
+      font-size: 1.5em;
+      margin: 1rem 0 .5rem;
+   }
+
+   .page-content {
+      background-color: #f4f4f4;
+      padding: 2rem;
+      & > p:first-child {
+         text-align: center;
+         font-size: 1.1em;
+      }
+      .contact-block {
+         margin: 1rem 0 0 0;
+         .viber {
+            color: #7360f2;
+         }
+         .mobile {
+            margin-right: 10px;
+         }
+      }
+      .icon {
+         margin: 0 5px 0 1rem;
+         font-size: 1.2em;
+         cursor: pointer;
+         color: $secondary-color;
+      }
+
+      .heart,
+      .envelope {
+         color: $hover-main-color;
+      }
+
+   }
+}

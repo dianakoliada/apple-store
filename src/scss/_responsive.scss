@@ -39,6 +39,13 @@
       }
    }
 
+   .tel,
+   .email {
+      strong {
+         display: none;
+      }
+   }
+
    footer {
       .navbar-nav {
          flex-direction: column;

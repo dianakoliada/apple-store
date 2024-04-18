@@ -1,4 +1,5 @@
 'use strict';
+
 const categoryBtn = document.getElementById('js-category-btn');
 const categoryList = document.getElementById('js-category-list');
 const burgerBtn = document.getElementById('js-burger');

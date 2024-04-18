@@ -1,0 +1,101 @@
+.slide-container {
+   max-width: 120rem;
+   width: 100%;
+   padding: 3rem 1rem;
+   margin: 1rem auto;
+   background-color: $bg-color;
+   .title-square {
+      margin-bottom: 3rem;
+   }
+   .slide-content {
+      @include flexCenter(row);
+      margin: 0 40px;
+      overflow: hidden;
+      border-radius: 25px;
+      .card {
+         border-radius: 25px;
+         background-color: $footer-bg-color;
+         .image-content,
+         .card-content {
+            @include flexCenter(column);
+            padding: 10px 14px;
+         }
+         .image-content {
+            position: relative;
+            row-gap: 5px;
+            padding: 25px 0;
+            .overlay {
+               @include positionLeft(absolute, 0, 0, 0);
+               @include size(100%, 100%);
+               background-color: #0062ffd1;
+               border-radius: 25px 25px 0 25px;
+               &::before,
+               &::after {
+                  @include size(2.5rem, 2.5rem);
+                  content: '';
+                  position: absolute;
+                  right: 0;
+                  bottom: -2.5rem;
+                  background-color: #0062ffd1;
+               }
+               &::after {
+                  width: 41px;
+                  border-radius: 0 25px 0 0;
+                  background-color: $footer-bg-color;
+               }
+            }
+            .card-image {
+               @include size(9.4rem, 9.4rem);
+               position: relative;
+               border-radius: 50%;
+               background: $footer-bg-color;
+               padding: 3px;
+               .card-img {
+                  @include size(100%, 100%);
+                  object-fit: cover;
+                  border-radius: 50%;
+                  border: 4px solid $hover-main-color;
+               }
+            }
+         }
+         .card-content {
+            height: 13.75rem;
+            .name {
+               font-size: 1.1rem;
+               font-weight: weight(regular);
+               color: $secondary-color;
+            }
+            .description {
+               font-size: .9rem;
+               color: #707070;
+               text-align: center;
+            }
+         }
+      }
+   }
+   .swiper-nav-btn {
+      @include transition-ease;
+      color: #0062ffd1;
+      &:hover {
+         color: $hover-main-color;
+      }
+      &::before,
+      &::after {
+         font-size: 2.5rem;
+      }
+   }
+   .swiper-button-next {
+      right: 0;
+   }
+   .swiper-button-prev {
+      left: 0;
+   }
+   .swiper-pagination-bullet {
+      background-color: #0062ffd1;
+      opacity: 1;
+   }
+   .swiper-pagination-bullet-active {
+      background-color: $hover-main-color;
+   }
+}
+

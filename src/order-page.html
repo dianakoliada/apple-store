@@ -10,14 +10,25 @@
 
    <div class="order-page">
       <div class="container">
-         <h2 class="order-page order-page-title">Order details</h2>
-         <div class="order-page flex-holder">
+         <h2 class="world-wrap">Order details</h2>
+         <div class="flex-holder">
             <div class="page-content page-content-info" id="js-test">
                <h3 class="cart-ordered-list__total">Your order is</h3>
                <div class="ordered-list" id="js-cart-total">
 
+                  <div class="cart-ordered-list__item">
+                     <div class="cart-ordered-list__item-img-hold">
+                        <img src="./img/gallery-1.jpg" alt="${title}" class="cart-ordered-list__item-img">
+                     </div>
+                     <div class="cart-ordered-list__item-text-hold">
+                        <div class="cart-ordered-list__item-title">${title}</div>
+                        <div class="cart-ordered-list__item-price">amount ${count}</div>
+                        <div class="cart-ordered-list__item-price">${price} USD</div>
+                     </div>
+                  </div>
+
                </div>
-               <h3 class="cart-ordered-list__total" id="js-total-sum"></h3>
+               <h3 class="cart-ordered-list__total" id="js-total-sum">Total sum is</h3>
             </div>
             <div class="page-content page-content-order">
                <div class="page-content page-content-form-wrap" id="js-form-wrap">
@@ -41,7 +52,7 @@
                         <label for="address" class="order-text">Delivery address:</label>
                         <textarea id="address" name="address" rows="4" class="order-input" placeholder=""></textarea>
                      </div>
-                     <button type="submit" class="order-btn d-flex-center" id="js-order-btn">Order now</button>
+                     <button type="submit" class="order-btn" id="js-order-btn">Order now</button>
                   </form>
                </div>
                <div class="success hide" id="js-success">
@@ -52,7 +63,6 @@
       </div>
    </div>
 
-   @@include('html/cart-btn.html', {})
    @@include('html/footer.html', {})
 
 </html>

@@ -15,9 +15,9 @@
    <meta name="msapplication-config" content="../src/img/favicon/browserconfig.xml">
    <meta name="theme-color" content="#ffffff">
    <!-- CSS Swiper -->
-   <link rel="stylesheet" href="css/swiper-bundle.min.css?_v=20240418164735">
+   <link rel="stylesheet" href="css/swiper-bundle.min.css?_v=20240419182531">
    <!-- CSS -->
-   <link rel="stylesheet" href="css/style.min.css?_v=20240418164735">
+   <link rel="stylesheet" href="css/style.min.css?_v=20240419182531">
 </head>
 
 <body>
@@ -117,13 +117,11 @@
             <ul class="navigation__item-list">
                <li class="navigation__item">
                   <a href="search-page.html" class="navigation__item-link">
-                     <svg class='icon icon-search'>
-                        <use xlink:href='#icon-search'></use>
-                     </svg>
+                     <i class="fa-solid fa-magnifying-glass icon icon-search"></i>
                   </a>
                </li>
                <li class="navigation__item">
-                  <a href="order.html?page=order" class="navigation__item-link">
+                  <a href="order-page.html?page=order" class="navigation__item-link">
                      <span class="cart-added-summ js-cart-added-summ show"></span>
                      <svg class='icon icon-cart-bag'>
                         <use xlink:href='#icon-cart-bag'></use>
@@ -138,14 +136,25 @@
 
    <div class="order-page">
       <div class="container">
-         <h2 class="order-page order-page-title">Order details</h2>
-         <div class="order-page flex-holder">
+         <h2 class="world-wrap">Order details</h2>
+         <div class="flex-holder">
             <div class="page-content page-content-info" id="js-test">
                <h3 class="cart-ordered-list__total">Your order is</h3>
                <div class="ordered-list" id="js-cart-total">
 
+                  <div class="cart-ordered-list__item">
+                     <div class="cart-ordered-list__item-img-hold">
+                        <img src="./src/img/gallery-1.jpg" alt="${title}" class="cart-ordered-list__item-img">
+                     </div>
+                     <div class="cart-ordered-list__item-text-hold">
+                        <div class="cart-ordered-list__item-title">${title}</div>
+                        <div class="cart-ordered-list__item-price">amount ${count}</div>
+                        <div class="cart-ordered-list__item-price">${price} USD</div>
+                     </div>
+                  </div>
+
                </div>
-               <h3 class="cart-ordered-list__total" id="js-total-sum"></h3>
+               <h3 class="cart-ordered-list__total" id="js-total-sum">Total sum is</h3>
             </div>
             <div class="page-content page-content-order">
                <div class="page-content page-content-form-wrap" id="js-form-wrap">
@@ -169,7 +178,7 @@
                         <label for="address" class="order-text">Delivery address:</label>
                         <textarea id="address" name="address" rows="4" class="order-input" placeholder=""></textarea>
                      </div>
-                     <button type="submit" class="order-btn d-flex-center" id="js-order-btn">Order now</button>
+                     <button type="submit" class="order-btn" id="js-order-btn">Order now</button>
                   </form>
                </div>
                <div class="success hide" id="js-success">
@@ -180,41 +189,6 @@
       </div>
    </div>
 
-   <div class="cart-added-list">
-   <button class="cart-added-list__btn" id="js-cart-added-btn">
-      <span class="cart-added-summ js-cart-added-summ show"></span>
-      <svg class='icon icon-cart-bag'>
-         <use xlink:href='#icon-cart-bag'></use>
-      </svg>
-   </button>
-   <div class="cart-added-list__item-list" id="js-cart-added-list">
-      <!-- start -->
-      <div class="cart-added-list__item">
-         <button class="cart-added-list__item-btn-delete btn-light js-btn-delete" data-index="${index}">
-            <i class="fa-solid fa-xmark"></i>
-         </button>
-         <img src="../src/img/gallery-3.jpg" alt="" class="cart-added-list__item-img">
-         <p class="cart-added-list__item-text-hold">
-            <a href="#" class="cart-added-list__item-title-link">Lorem ipsum dolor sit amet.</a>
-            <span class="cart-added-list__item-meta-list">
-               <span class="cart-added-list__item-meta">${price} USD</span>
-            </span>
-         </p>
-         <p class="cart-added-list__item-count js-input" id="input-count-${id}">3</p>
-         <button class="cart-added-list__item-btn-plus btn-light js-count" data-type="plus"
-            data-input="#input-count-${id}" data-index="${index}">
-            <i class="fa-solid fa-plus"></i>
-         </button>
-         <button class="cart-added-list__item-btn-minus btn-light js-count" data-type="minus"
-            data-input="#input-count-${id}" data-index="${index}">
-            <i class="fa-solid fa-minus"></i>
-         </button>
-      </div>
-      <!-- end -->
-
-      <h2 class="no-result hide">No products found</h2>
-   </div>
-</div>
    <footer class="footer">
    <div class="container">
       <a href="index.html" class="logo">I-happy</a>
@@ -258,10 +232,10 @@
    </div>
 </footer>
 
-<script src="js/swiper-bundle.min.js?_v=20240418164735"></script>
-<script src="js/swiper.js?_v=20240418164735"></script>
-<script src="https://kit.fontawesome.com/9e1cc857b5.js?_v=20240418164735" crossorigin="anonymous"></script>
-<script src="js/app.min.js?_v=20240418164735"></script>
+<script src="js/swiper-bundle.min.js?_v=20240419182531"></script>
+<script src="js/swiper.js?_v=20240419182531"></script>
+<script src="https://kit.fontawesome.com/9e1cc857b5.js?_v=20240419182531" crossorigin="anonymous"></script>
+<script src="js/app.min.js?_v=20240419182531"></script>
 </body>
 
 </html>

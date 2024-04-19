@@ -14,8 +14,3 @@ export const js = () => {
       .pipe(uglify())
       .pipe(app.gulp.dest(app.path.build.js));
 };
-
-export const copySingleFile = () => {
-   return app.gulp.src(app.path.src.swiper)
-      .pipe(app.gulp.dest(app.path.build.js));
-}

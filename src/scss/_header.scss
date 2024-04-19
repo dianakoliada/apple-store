@@ -69,16 +69,22 @@ header {
          .navigation__item-list {
             display: flex;
             justify-content: flex-end;
-            column-gap: 1.8rem;
-
+            column-gap: 1.2rem;
             .navigation__item-link {
                display: flex;
                text-align: center;
                justify-content: flex-end;
                position: relative;
-
                &:hover {
                   transform: scale(1.15);
+               }
+               .icon-search {
+                  font-size: 1em;
+                  position: relative;
+                  top: 2px;
+               }
+               .icon-cart-bag {
+                  @include size(1.1em, 1.1em);
                }
             }
          }

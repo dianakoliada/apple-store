@@ -6,22 +6,20 @@ global.app = {
    gulp: gulp,
 }
 
-import { copy } from './gulp/tasks/copy.js';
 import { reset } from './gulp/tasks/reset.js';
 import { html } from './gulp/tasks/html.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
-import { copySingleFile } from './gulp/tasks/js.js';
+import { copySwiperFileJS, copySwiperFileCSS } from './gulp/tasks/swiperFileCopy.js';
 
 
 function watcher() {
-   gulp.watch(path.watch.files, copy);
    gulp.watch(path.watch.html, html);
    gulp.watch(path.watch.scss, scss);
    gulp.watch(path.watch.js, js);
 }
 
-const mainTasks = gulp.parallel(copy, html, scss, js, copySingleFile);
+const mainTasks = gulp.parallel(html, scss, js, copySwiperFileJS, copySwiperFileCSS);
 
 const dev = gulp.series(reset, mainTasks, watcher);
 

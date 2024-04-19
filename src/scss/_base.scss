@@ -19,6 +19,16 @@ h1, h2, h3 {
    font-weight: weight(bold);
 }
 
+h2 {
+   font-size: 1.9em;
+   margin: 2rem 0;
+}
+
+h3 {
+   font-size: 1.5em;
+   margin: 1rem 0 .5rem;
+}
+
 a {
    color: $secondary-color;
    text-decoration: none;
@@ -67,4 +77,35 @@ svg {
 
 .world-wrap {
    white-space: nowrap;
+}
+
+.title-square {
+   @include flexCenter(column);
+   position: relative;
+   min-height: 11rem;
+   text-align: center;
+
+   &::before {
+      @include size(94px, 150px);
+      border: 5px solid #e9ecef;
+      border-radius: 8px; 
+   }
+   .title-square__small {
+      z-index: 1;
+      font-size: 15px;
+      font-weight: weight(regular);
+      color: #6c757d;
+   }
+   .title-square__main {
+      z-index: 1;
+      font-size: 30px;
+      text-transform: uppercase;
+      font-weight: weight(bold);
+   }
+}
+.title-square::before,
+.title-square::after {
+   @include positionLeft(absolute, 13px, 50%, 0);
+   content: '';
+   transform: translate(-50%, 0);
 }

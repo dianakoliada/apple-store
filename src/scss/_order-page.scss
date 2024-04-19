@@ -1,0 +1,87 @@
+.order-page {
+   .flex-holder {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 15px;
+      .page-content-order,
+      .page-content-info {
+         width: 49%;
+         background-color: #f4f4f4;
+         padding: 1.9rem;
+         border-radius: .5rem;
+         box-shadow: $box-shadow-main;
+      }
+      .page-content-info {
+         .cart-ordered-list__item {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1rem;
+            .cart-ordered-list__item-img-hold {
+               @include size(10.6rem, 31%);
+               border-radius: .5rem;
+               .cart-ordered-list__item-img {
+                  width: 100%;
+                  border-radius: .5rem;
+                  overflow: hidden;
+               }
+            }
+            .cart-ordered-list__item-text-hold {
+               width: 300px;
+               margin-top: 10px;
+            }
+         }
+      }
+      .page-content-order {
+         p {
+            margin-bottom: 1rem;
+         }
+         .order-form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+            input,
+            textarea {
+               @include size(80%, 1.9rem);
+               display: block;
+               border: none;
+               outline: none;
+               border-radius: .5rem;
+               padding: 1rem;
+            }
+            textarea {
+               height: 5rem;
+            }
+            label {
+               line-height: 2;
+            }
+            .order-btn {
+               @include flexCenter(row);
+               @include size(80%, 2.5rem);
+               @include transition-ease;
+               background-color: $primary-color;
+               color: $bg-color;
+               border-radius: .5rem;
+               border: 1px solid transparent;
+               font-size: 1.25rem;
+               cursor: pointer;
+               &:hover {
+                  @include transition-ease;
+                  background-color: $hover-main-color;
+               }
+            } 
+         }
+      }
+   }
+}
+
+
+.cart-empty-icon-holder {
+   width: 40%;
+   margin: 35px 0;
+}
+
+.cart-empty-icon {
+   width: 100%;
+}

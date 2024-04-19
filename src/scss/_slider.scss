@@ -9,23 +9,27 @@
    }
    .slide-content {
       @include flexCenter(row);
-      margin: 0 40px;
+      margin: 0 30px;
       overflow: hidden;
       border-radius: 25px;
       .card {
          border-radius: 25px;
          background-color: $footer-bg-color;
+         margin: 1rem  auto;
+         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
          .image-content,
          .card-content {
             @include flexCenter(column);
+            justify-content: flex-start;
             padding: 10px 14px;
+            margin-top: 1rem;
          }
          .image-content {
             position: relative;
             row-gap: 5px;
             padding: 25px 0;
             .overlay {
-               @include positionLeft(absolute, 0, 0, 0);
+               @include positionLeft(absolute, -1rem, 0, 0);
                @include size(100%, 100%);
                background-color: #0062ffd1;
                border-radius: 25px 25px 0 25px;
@@ -59,7 +63,7 @@
             }
          }
          .card-content {
-            height: 13.75rem;
+            height: 10rem;
             .name {
                font-size: 1.1rem;
                font-weight: weight(regular);
@@ -69,6 +73,7 @@
                font-size: .9rem;
                color: #707070;
                text-align: center;
+               padding-bottom: 1rem;
             }
          }
       }

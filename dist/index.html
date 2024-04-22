@@ -15,9 +15,9 @@
    <meta name="msapplication-config" content="../src/img/favicon/browserconfig.xml">
    <meta name="theme-color" content="#ffffff">
    <!-- CSS Swiper -->
-   <link rel="stylesheet" href="css/swiper-bundle.min.css?_v=20240419182531">
+   <link rel="stylesheet" href="css/swiper-bundle.min.css?_v=20240422174129">
    <!-- CSS -->
-   <link rel="stylesheet" href="css/style.min.css?_v=20240419182531">
+   <link rel="stylesheet" href="css/style.min.css?_v=20240422174129">
 </head>
 
 <body>
@@ -138,83 +138,20 @@
       <div class="container">
          <div class="catalog__header">
             <div class="catalog__select-category dropdown">
-               <h3 class="dropdown-btn" id="js-category-btn">Category</h3>
-               <div class="dropdown-content" id="js-category-list">
-                  <a href="#" class="dropdown-item">Some text</a>
-                  <a href="#" class="dropdown-item">Some text</a>
-                  <a href="#" class="dropdown-item">Some text</a>
-                  <a href="#" class="dropdown-item">Some text</a>
-               </div>
+               <h3 class="dropdown-btn" id="js-category-btn">Categories</h3>
+               <ul class="dropdown-content" id="js-category-list">
+                  <!-- here categories are displayed -->
+               </ul>
             </div>
             <div class="catalog__text-holder">
                <h3 class="catalog__products-sum">Found products: <span id="count-products"></span></h3>
             </div>
          </div>
-         <div class="catalog__content js-catalog-cards" id="catalog-cards">
-            <!-- example start-->
-            <div class="card-product">
-               <div class="card-product__img-hold">
-                  <img src="../src/img/gallery-1.jpg" alt="" class="card-product__img js-product-img">
-               </div>
-               <div class="card-product__text-hold">
-                  <a href="#" class="card-product__title-link">${title}</a>
-                  <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
-                  <a href="#" class="card-product__btn-add js-icon-cart" data-id="${id}" data-title="${title}"
-                     data-price="${price}" data-img="${img}" data-count="1"><svg class='icon icon-cart'>
-                        <use xlink:href='#icon-cart-add'></use>
-                     </svg></a>
-               </div>
-            </div>
-            <!-- example end-->
-            <!-- example start-->
-            <div class="card-product">
-               <div class="card-product__img-hold">
-                  <img src="../src/img/gallery-1.jpg" alt="" class="card-product__img js-product-img">
-               </div>
-               <div class="card-product__text-hold">
-                  <a href="#" class="card-product__title-link">${title}</a>
-                  <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
-                  <a href="#" class="card-product__btn-add js-icon-cart" data-id="${id}" data-title="${title}"
-                     data-price="${price}" data-img="${img}" data-count="1"><svg class='icon icon-cart'>
-                        <use xlink:href='#icon-cart-add'></use>
-                     </svg></a>
-               </div>
-            </div>
-            <!-- example end-->
-            <!-- example start-->
-            <div class="card-product">
-               <div class="card-product__img-hold">
-                  <img src="../src/img/gallery-1.jpg" alt="" class="card-product__img js-product-img">
-               </div>
-               <div class="card-product__text-hold">
-                  <a href="#" class="card-product__title-link">${title}</a>
-                  <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
-                  <a href="#" class="card-product__btn-add js-icon-cart" data-id="${id}" data-title="${title}"
-                     data-price="${price}" data-img="${img}" data-count="1"><svg class='icon icon-cart'>
-                        <use xlink:href='#icon-cart-add'></use>
-                     </svg></a>
-               </div>
-            </div>
-            <!-- example end-->
-            <!-- example start-->
-            <div class="card-product">
-               <div class="card-product__img-hold">
-                  <img src="../src/img/gallery-1.jpg" alt="" class="card-product__img js-product-img">
-               </div>
-               <div class="card-product__text-hold">
-                  <a href="#" class="card-product__title-link">${title}</a>
-                  <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
-                  <a href="#" class="card-product__btn-add js-icon-cart" data-id="${id}" data-title="${title}"
-                     data-price="${price}" data-img="${img}" data-count="1"><svg class='icon icon-cart'>
-                        <use xlink:href='#icon-cart-add'></use>
-                     </svg></a>
-               </div>
-            </div>
-            <!-- example end-->
+         <div class="catalog__content" id="js-product-cards">
+            <!-- here product cards are displayed -->
          </div>
       </div>
    </div>
-
    <div class="hot-offers">
       <div class="container">
          <h2 class="hot-offers__title title-square">
@@ -224,82 +161,8 @@
             <span class="title-square__small">Special offers!</span>
             <span class="title-square__main">Hot offers</span>
          </h2>
-         <div class="hot-offers__cards js-hotoffers js-catalog-cards">
-            <!-- example start-->
-            <div class="card-product">
-               <div class="card-product__img-hold">
-                  <img src="../src/img/gallery-1.jpg" alt="" class="card-product__img js-product-img">
-               </div>
-               <div class="card-product__text-hold">
-                  <a href="#" class="card-product__title-link">${title}</a>
-                  <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
-                  <a href="#" class="card-product__btn-add js-icon-cart" data-id="${id}" data-title="${title}"
-                     data-price="${price}" data-img="${img}" data-count="1"><svg class='icon icon-cart'>
-                        <use xlink:href='#icon-cart-add'></use>
-                     </svg></a>
-               </div>
-            </div>
-            <!-- example end-->
-            <!-- example start-->
-            <div class="card-product">
-               <div class="card-product__img-hold">
-                  <img src="../src/img/gallery-1.jpg" alt="" class="card-product__img js-product-img">
-               </div>
-               <div class="card-product__text-hold">
-                  <a href="#" class="card-product__title-link">${title}</a>
-                  <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
-                  <a href="#" class="card-product__btn-add js-icon-cart" data-id="${id}" data-title="${title}"
-                     data-price="${price}" data-img="${img}" data-count="1"><svg class='icon icon-cart'>
-                        <use xlink:href='#icon-cart-add'></use>
-                     </svg></a>
-               </div>
-            </div>
-            <!-- example end-->
-            <!-- example start-->
-            <div class="card-product">
-               <div class="card-product__img-hold">
-                  <img src="../src/img/gallery-1.jpg" alt="" class="card-product__img js-product-img">
-               </div>
-               <div class="card-product__text-hold">
-                  <a href="#" class="card-product__title-link">${title}</a>
-                  <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
-                  <a href="#" class="card-product__btn-add js-icon-cart" data-id="${id}" data-title="${title}"
-                     data-price="${price}" data-img="${img}" data-count="1"><svg class='icon icon-cart'>
-                        <use xlink:href='#icon-cart-add'></use>
-                     </svg></a>
-               </div>
-            </div>
-            <!-- example end-->
-            <!-- example start-->
-            <div class="card-product">
-               <div class="card-product__img-hold">
-                  <img src="../src/img/gallery-1.jpg" alt="" class="card-product__img js-product-img">
-               </div>
-               <div class="card-product__text-hold">
-                  <a href="#" class="card-product__title-link">${title}</a>
-                  <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
-                  <a href="#" class="card-product__btn-add js-icon-cart" data-id="${id}" data-title="${title}"
-                     data-price="${price}" data-img="${img}" data-count="1"><svg class='icon icon-cart'>
-                        <use xlink:href='#icon-cart-add'></use>
-                     </svg></a>
-               </div>
-            </div>
-            <!-- example end-->
-            <!-- example start-->
-            <div class="card-product">
-               <div class="card-product__img-hold">
-                  <img src="../src/img/gallery-1.jpg" alt="" class="card-product__img js-product-img">
-               </div>
-               <div class="card-product__text-hold">
-                  <a href="#" class="card-product__title-link">${title}</a>
-                  <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
-                  <a href="#" class="card-product__btn-add js-icon-cart" data-id="${id}" data-title="${title}"
-                     data-price="${price}" data-img="${img}" data-count="1"><svg class='icon icon-cart'>
-                        <use xlink:href='#icon-cart-add'></use>
-                     </svg></a>
-               </div>
-            </div>
-            <!-- example end-->
+         <div class="hot-offers__cards" id="js-hot-offers">
+            <!-- here product cards hot offers are displayed -->
          </div>
       </div>
    </div>
@@ -314,37 +177,37 @@
                <a href="#" class="gallery__item-hover-box">
                   <span class="gallery__item-hash-tag link-hover">#instagram-link</span>
                </a>
-               <img src="../src/img/gallery-1.jpg" alt="" class="gallery__item-img">
+               <img src="../src/img/gallery/gallery-1.jpg" alt="" class="gallery__item-img">
             </div>
             <div class="gallery__item">
                <a href="#" class="gallery__item-hover-box">
                   <span class="gallery__item-hash-tag link-hover">#instagram-link</span>
                </a>
-               <img src="../src/img/gallery-2.jpg" alt="" class="gallery__item-img">
+               <img src="../src/img/gallery/gallery-2.jpg" alt="" class="gallery__item-img">
             </div>
             <div class="gallery__item">
                <a href="#" class="gallery__item-hover-box">
                   <span class="gallery__item-hash-tag link-hover">#instagram-link</span>
                </a>
-               <img src="../src/img/gallery-3.jpg" alt="" class="gallery__item-img">
+               <img src="../src/img/gallery/gallery-3.jpg" alt="" class="gallery__item-img">
             </div>
             <div class="gallery__item">
                <a href="#" class="gallery__item-hover-box">
                   <span class="gallery__item-hash-tag link-hover">#instagram-link</span>
                </a>
-               <img src="../src/img/gallery-4.jpg" alt="" class="gallery__item-img">
+               <img src="../src/img/gallery/gallery-4.jpg" alt="" class="gallery__item-img">
             </div>
             <div class="gallery__item">
                <a href="#" class="gallery__item-hover-box">
                   <span class="gallery__item-hash-tag link-hover">#instagram-link</span>
                </a>
-               <img src="../src/img/gallery-5.jpg" alt="" class="gallery__item-img">
+               <img src="../src/img/gallery/gallery-5.jpg" alt="" class="gallery__item-img">
             </div>
             <div class="gallery__item">
                <a href="#" class="gallery__item-hover-box">
                   <span class="gallery__item-hash-tag link-hover">#instagram-link</span>
                </a>
-               <img src="../src/img/gallery-6.jpg" alt="" class="gallery__item-img">
+               <img src="../src/img/gallery/gallery-6.jpg" alt="" class="gallery__item-img">
             </div>
          </div>
       </div>
@@ -358,29 +221,7 @@
       </svg>
    </button>
    <div class="cart-added-list__item-list" id="js-cart-added-list">
-      <!-- start -->
-      <div class="cart-added-list__item">
-         <button class="cart-added-list__item-btn-delete btn-light js-btn-delete" data-index="${index}">
-            <i class="fa-solid fa-xmark"></i>
-         </button>
-         <img src="../src/img/gallery-3.jpg" alt="" class="cart-added-list__item-img">
-         <p class="cart-added-list__item-text-hold">
-            <a href="#" class="cart-added-list__item-title-link">Lorem ipsum dolor sit amet.</a>
-            <span class="cart-added-list__item-meta-list">
-               <span class="cart-added-list__item-meta">${price} USD</span>
-            </span>
-         </p>
-         <p class="cart-added-list__item-count js-input" id="input-count-${id}">3</p>
-         <button class="cart-added-list__item-btn-plus btn-light js-count" data-type="plus"
-            data-input="#input-count-${id}" data-index="${index}">
-            <i class="fa-solid fa-plus"></i>
-         </button>
-         <button class="cart-added-list__item-btn-minus btn-light js-count" data-type="minus"
-            data-input="#input-count-${id}" data-index="${index}">
-            <i class="fa-solid fa-minus"></i>
-         </button>
-      </div>
-      <!-- end -->
+      <!-- here product list are displayed -->
 
       <h2 class="no-result hide">No products found</h2>
    </div>
@@ -393,13 +234,13 @@
             <a class="nav-link" href="index.html#catalog">Catalog</a>
          </li>
          <li class="nav-item">
-            <a class="nav-link" href="about.html">About us</a>
+            <a class="nav-link" href="about-us-page.html" target="_blank">About us</a>
          </li>
          <li class="nav-item">
-            <a class="nav-link" href="delivery.html">Delivery and payment</a>
+            <a class="nav-link" href="delivery-page.html" target="_blank">Delivery and payment</a>
          </li>
          <li class="nav-item">
-            <a class="nav-link" href="contacts.html">Contacts</a>
+            <a class="nav-link" href="contacts-page.html" target="_blank">Contacts</a>
          </li>
       </ul>
       <div class="footer__social">
@@ -428,10 +269,10 @@
    </div>
 </footer>
 
-<script src="js/swiper-bundle.min.js?_v=20240419182531"></script>
-<script src="js/swiper.js?_v=20240419182531"></script>
-<script src="https://kit.fontawesome.com/9e1cc857b5.js?_v=20240419182531" crossorigin="anonymous"></script>
-<script src="js/app.min.js?_v=20240419182531"></script>
+<script src="js/swiper-bundle.min.js?_v=20240422174129"></script>
+<script src="js/swiper.js?_v=20240422174129"></script>
+<script src="https://kit.fontawesome.com/9e1cc857b5.js?_v=20240422174129" crossorigin="anonymous"></script>
+<script src="js/app.min.js?_v=20240422174129"></script>
 </body>
 
 

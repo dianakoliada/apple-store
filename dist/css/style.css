@@ -523,7 +523,7 @@ main .catalog .catalog__header .catalog__products-sum {
 }
 
 main .catalog .catalog__content .card-product {
-  max-width: 15rem;
+  max-width: 15.7rem;
 }
 
 main .hot-offers {
@@ -626,7 +626,7 @@ main .gallery .gallery__item-img {
           justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 35px;
+  gap: 1.5rem;
 }
 
 .catalog .catalog__content .card-product,
@@ -646,7 +646,7 @@ main .gallery .gallery__item-img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 15px;
+  padding: 0 0.9rem;
   background-color: #fff;
   -webkit-box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);
           box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);

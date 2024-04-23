@@ -1,6 +1,7 @@
 const categoryHolder = document.getElementById('js-category-list');
 const productCardsHolder = document.getElementById('js-product-cards');
 const hotOffersCardsHolder = document.getElementById('js-hot-offers');
+const countProductsHolder = document.getElementById('js-count-products');
 
 const getCategoryHTML = (id, title) => {
    return `
@@ -65,4 +66,8 @@ const getOrderedProductsHTML = (title, count, price) => {
    </div>`
 }
 
-export { getCategoryHTML, getProductsHTML, getCartProductsListHTML, getOrderedProductsHTML, categoryHolder, productCardsHolder, hotOffersCardsHolder };
+const displayProductCount = (data) => {
+   countProductsHolder.innerHTML = data;
+}
+
+export { getCategoryHTML, getProductsHTML, getCartProductsListHTML, getOrderedProductsHTML, displayProductCount, categoryHolder, productCardsHolder, hotOffersCardsHolder, countProductsHolder };

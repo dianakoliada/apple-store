@@ -58,7 +58,7 @@ main {
       }
       .catalog__content {
          .card-product {
-            max-width: 15rem;
+            max-width: 15.7rem;
          }
       }
    }
@@ -120,10 +120,10 @@ main {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      gap: 35px;
+      gap: 1.5rem;
       .card-product {
          @include flexCenter(column);
-         padding: 0 15px;
+         padding: 0 .9rem;
          background-color: $bg-color;
          box-shadow: $box-shadow-main;
          .card-product__img-hold {

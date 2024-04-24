@@ -11,13 +11,13 @@ main {
                cursor: pointer;
                position: relative;
                z-index: 2;
-               padding-right: 28px;
+               padding-right: 1.75rem;
                display: flex;
                align-items: flex-start;
-               font-size: 26px;
+               font-size: 1.6rem;
                font-weight: weight(bold);
                &::after {
-                  @include positionLeft(absolute, -6px, 8.81rem, 0);
+                  @include positionTopLeft(absolute, -6px, 8.81rem, 0);
                   content: '\203A';
                   transform: rotate(90deg);
                   font-size: 150%;
@@ -25,24 +25,24 @@ main {
                }
             }
             .dropdown-content {
-               @include positionLeft(absolute, 3rem, 0, 1);
+               @include positionTopLeft(absolute, 3rem, 0, 1);
                transition: 0.25s;
                opacity: 1;
                transform: scale(0);
-               padding: 16px 14px;
-               background-color: #ffffff;
-               min-width: 160px;
+               padding: 1rem .875rem;
+               background-color: $main-color;
+               min-width: 10rem;
                box-shadow: $box-shadow-main;
-               border-radius: 15px;
+               border-radius: .9rem;
                .dropdown-item {
                   display: block;
-                  padding: 8px 16px;
+                  padding: .5rem 1rem;
                   text-decoration: none;
                   transition: 0.3s;
                   font-weight: weight(medium);
                   font-size: 1rem;
                   min-width: 12.5rem;
-                  border-radius: 10px;
+                  border-radius: .625rem;
                }
             }
             .show {
@@ -66,7 +66,7 @@ main {
       margin: 5rem 0;
       .hot-offers__title {
          .title-square__icon {
-            font-size: 40px;
+            font-size: 2.5rem;
             line-height: 1;
             padding: 1rem 0 .4rem 0;
             color: #ff0000;
@@ -80,33 +80,33 @@ main {
       }
    }
    .gallery {
-      margin: 100px 0;
+      margin: 6.25rem 0;
       .gallery__items {
          @include flexCenter(row);
          flex-wrap: wrap;
-         gap: 30px;
-         margin: 80px 0 100px;
+         gap: 1.875rem;
+         margin: 5rem 0 6.25rem;
       }
       .gallery__item {
          position: relative;
       }
       .gallery__item-hover-box {
-         @include positionLeft(absolute, 0, 0, 0);
+         @include positionTopLeft(absolute, 0, 0, 0);
          @include flexCenter(row);
          @include size(100%, 100%);
          background-color: rgba(11, 95, 231, 0.332);
-         border-radius: 20px;
+         border-radius: 1.25rem;
          transition: .45s;
-         font-size: 20px;
+         font-size: 1.25rem;
          text-shadow: 0 0 15px rgba(254, 254, 254, 0.8);
-         color: #fff;
+         color: $main-color;
          opacity: 0;
          &:hover {
             opacity: 1;
          }
       }
       .gallery__item-img {
-         border-radius: 20px;
+         border-radius: 1.25rem;
          display: block;
          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
@@ -124,56 +124,52 @@ main {
       .card-product {
          @include flexCenter(column);
          padding: 0 .9rem;
-         background-color: $bg-color;
+         background-color: $main-color;
          box-shadow: $box-shadow-main;
+         position: relative;
          .card-product__img-hold {
             @include flexCenter(row);
-            height: 17.5rem;
+            margin: 1rem 0;
             overflow: hidden;
             img {
                width: 100%;
-               min-width: 200px;
+               min-width: 12.5rem;
                max-height: 100%;
-               border-radius: 15px;
+               border-radius: .9rem;
                object-fit: cover;
             }
          }
-      }
-      .card-product__text-hold {
-         @include flexStart(column);
-         position: relative;
-         padding-right: 3.1rem;
-         margin-bottom: 2.5rem;
-         .card-product__title-link {
-            font-size: 1rem;
-            font-weight: weight(medium);
-         }
-         .card-product__price {
-            font-size: .8rem;
-            color: #6C798E;
-            font-weight: weight(regular);
-            small {
-               position: relative;
-               margin: 0 4px;
-               font-size: 80%;
-               &::before {
-                  @include positionLeft(absolute, 48%, 0, 0);
-                  @include size(100%, 0);
-                  content: '';
-                  border-bottom: 1px solid;
-                  opacity: .5;
-                  transform: rotate(355deg);
+         .card-product__text-hold {
+            text-align: center;
+            position: relative;
+            margin-bottom: 5rem;
+            .card-product__title-link {
+               font-size: 1rem;
+               font-weight: weight(medium);
+            }
+            .card-product__price {
+               font-size: .8rem;
+               color: #6C798E;
+               font-weight: weight(regular);
+               small {
+                  position: relative;
+                  margin: 0 4px;
+                  font-size: 80%;
+                  &::before {
+                     @include positionTopLeft(absolute, 48%, 0, 0);
+                     @include size(100%, 0);
+                     content: '';
+                     border-bottom: 1px solid;
+                     opacity: .5;
+                     transform: rotate(355deg);
+                  }
                }
             }
          }
-         .card-product__btn-add {
-            @include positionRight(absolute, -10px, 0, 0);
-            transition: .25s;
-            padding: 14px 12px 14px 14px;
-            font-size: 18px;
-            &:hover {
-               transform: scale(1.2);
-            }
+         .btn {
+            @include positionBottomLeft(absolute, 0, 1.56rem, 0);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
          }
       }
    }
@@ -182,7 +178,7 @@ main {
 .gallery,
 .slide-container {
    .title-square::after {
-      @include size(2px, 60px);
+      @include size(2px, 3.75rem);
       top: -1rem;
       z-index: 1;
       background-color: #fee085;

@@ -6,7 +6,7 @@
 }
 
 body {
-   background-color: $bg-color;
+   background-color: $main-color;
    font-family: $font-stack;
    font-size: 1rem;
    font-weight: weight(regular);
@@ -42,21 +42,20 @@ a {
 }
 
 svg {
-   width: 1em;
-   height: 1em;
+   @include size(1em, 1em);
    position: relative;
 }
 
 .container {
-   max-width: 1200px;
+   max-width: 75rem;
    margin: 0 auto;
-   padding: 0 20px;
+   padding: 0 1.25rem;
 }
 
 .container-fill {
-   max-width: 1920px;
+   max-width: 120rem;
    margin: 0 auto;
-   padding: 0 16px;
+   padding: 0 1rem;
 }
 
 .hide {
@@ -64,8 +63,8 @@ svg {
 }
 
 .success {
-   margin: 30px auto;
-   font-size: 30px;
+   margin: 1.8rem auto;
+   font-size: 1.9rem;
    font-weight: weight(bold);
    color: #2dd36f;
    text-align: center;
@@ -84,28 +83,66 @@ svg {
    position: relative;
    min-height: 11rem;
    text-align: center;
-
    &::before {
-      @include size(94px, 150px);
+      @include size(5.9rem, 9.4rem);
       border: 5px solid #e9ecef;
-      border-radius: 8px; 
+      border-radius: .5rem; 
    }
    .title-square__small {
       z-index: 1;
-      font-size: 15px;
+      font-size: .9rem;
       font-weight: weight(regular);
       color: #6c757d;
    }
    .title-square__main {
       z-index: 1;
-      font-size: 30px;
+      font-size: 1.9rem;
       text-transform: uppercase;
       font-weight: weight(bold);
    }
 }
 .title-square::before,
 .title-square::after {
-   @include positionLeft(absolute, 13px, 50%, 0);
+   @include positionTopLeft(absolute, 13px, 50%, 0);
    content: '';
    transform: translate(-50%, 0);
+}
+
+.btn {
+   @include flexCenter(row);
+   @include size(80%, 2.5rem);
+   @include transition-ease;
+   background-color: #0062ffd1;
+   color: $main-color;
+   border-radius: .5rem;
+   border: 1px solid transparent;
+   font-size: 1.25rem;
+   cursor: pointer;
+   &:hover {
+      background-color: $hover-main-color;
+      color: $main-color;
+   }
+} 
+
+.show {
+   opacity: 1;
+   transform: scale(100%);
+}
+
+.cart-count {
+   @include positionTopRight(absolute, -4px, -9px, 2);
+   @include size(18px, 18px);
+   @include flexCenter(row);
+   font-size: .6rem;
+   font-weight: weight(bold);
+   background-color: #EB4C42;
+   border-radius: .6rem;
+   padding: 0 5px;
+   color: #fff;
+}
+.no-result {
+   font-size: 1.3rem;
+   color: #6C798E;
+   margin: 0;
+   padding: 0;
 }

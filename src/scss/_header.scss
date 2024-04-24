@@ -5,54 +5,46 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      
       .navigation__left,
       .navigation__right {
          width: 26.8rem;
          max-width: 40%;
       }
-
       .navigation__left {
          position: relative;
          .menu-btn {
-            @include positionLeft(absolute, -7px, 1px, 1);
+            @include positionTopLeft(absolute, -7px, 1px, 1);
             @include transition-ease;
-            @include size(28px, 20px);
+            @include size(1.75rem, 1.25rem);
             display: none;
             cursor: pointer;
-            
             &__burger {
-               @include positionRight(absolute, .5rem, 0, 0);
+               @include positionTopRight(absolute, .5rem, 0, 0);
                @include transition-ease;
-               @include size(28px, 3px);
+               @include size(1.75rem, 3px);
                background-color: $secondary-color;
-
                &::before {
                   content: '';
-                  @include positionLeft(absolute, -8px, 0, 0);
+                  @include positionTopLeft(absolute, -.5rem, 0, 0);
                   @include transition-ease;
-                  @include size(28px, 3px);
+                  @include size(1.75rem, 3px);
                   background-color: $secondary-color;
                }
-         
                &::after {
-                  @include positionLeft(absolute, 8px, 0, 0);
+                  @include positionTopLeft(absolute, .5rem, 0, 0);
                   @include transition-ease;
-                  @include size(20px, 3px);
+                  @include size(1.25rem, 3px);
                   content: '';
                   background-color: $secondary-color;
                }
-
                &.open {
                   transform: rotate(720deg);
                   background-color: transparent;
-
                   &::before {
-                     transform: rotate(45deg) translate(5px, 8px);
+                     transform: rotate(45deg) translate(5px, .5rem);
                   }
-         
                   &::after {
-                     width: 28px;
+                     width: 1.75rem;
                      transform: rotate(-45deg) translate(3px, -7px);
                   }
                }
@@ -64,7 +56,6 @@ header {
          }
 
       }
-
       .navigation__right {
          .navigation__item-list {
             display: flex;
@@ -84,12 +75,11 @@ header {
                   top: 2px;
                }
                .icon-cart-bag {
-                  @include size(1.1em, 1.1em);
+                  @include size(1.2em, 1.2em);
                }
             }
          }
       }
-
       .navigation__middle {
          width: 8.75rem;
          text-align: center;
@@ -102,7 +92,6 @@ header {
    font-weight: weight(bold);
    white-space: nowrap;
    transform: scale(1);
-   
    &:hover {
       transform: scale(1.1);
    }

@@ -4,7 +4,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      gap: 15px;
+      gap: .9rem;
       .page-content-order,
       .page-content-info {
          width: 49%;
@@ -28,8 +28,8 @@
                }
             }
             .cart-ordered-list__item-text-hold {
-               width: 300px;
-               margin-top: 10px;
+               width: 18.75rem;
+               margin-top: .625rem;
             }
          }
       }
@@ -40,15 +40,18 @@
          .order-form {
             display: flex;
             flex-direction: column;
-            row-gap: 25px;
+            row-gap: 1.56rem;
+            width: 100%;
+            .form-group {
+               padding: 0 1rem;
+            }
             input,
             textarea {
-               @include size(80%, 1.9rem);
+               @include size(100%, 1.9rem);
                display: block;
                border: none;
                outline: none;
                border-radius: .5rem;
-               padding: 1rem;
             }
             textarea {
                height: 5rem;
@@ -56,30 +59,19 @@
             label {
                line-height: 2;
             }
-            .order-btn {
-               @include flexCenter(row);
-               @include size(80%, 2.5rem);
-               @include transition-ease;
-               background-color: $primary-color;
-               color: $bg-color;
-               border-radius: .5rem;
-               border: 1px solid transparent;
-               font-size: 1.25rem;
-               cursor: pointer;
-               &:hover {
-                  @include transition-ease;
-                  background-color: $hover-main-color;
-               }
-            } 
+            .btn,
+            .form-group {
+               width: 100%;
+               margin: 0 auto;
+            }
          }
       }
    }
 }
 
-
 .cart-empty-icon-holder {
    width: 40%;
-   margin: 35px 0;
+   margin: 2.2rem 0;
 }
 
 .cart-empty-icon {

@@ -8,16 +8,16 @@
             .nav {
                position: relative;
                .menu-nav {
-                  @include positionLeft(absolute, 19px, 23px, 4);
+                  @include positionTopLeft(absolute, 19px, 23px, 4);
                   transition: 0.25s;
                   flex-direction: column;
                   opacity: 1;
                   transform: scale(0);
                   padding: 2rem;
-                  background-color: $bg-color;
+                  background-color: $main-color;
                   min-width: 12rem;
                   box-shadow: $box-shadow-main;
-                  border-radius: 15px;
+                  border-radius: .9rem;
                }
                .show {
                   opacity: 1;
@@ -59,21 +59,18 @@
          order: -1;
       }
    }
-
    .tel,
    .email {
       strong {
          display: none;
       }
    }
-
    footer {
       margin-top: 4rem;
       .navbar-nav {
          flex-direction: column;
       }
    }
-
    .order-page {
       .flex-holder {
          .page-content-order {

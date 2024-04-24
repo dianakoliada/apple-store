@@ -1,29 +1,25 @@
 footer {
    margin-top: 8rem;
-   padding: 55px 0 30px;
+   padding: 3.4rem 0 1.875rem;
    border-top: 1px solid #eee;
-   background-color: #f7f7f7;
+   background-color: $footer-bg-color;
    text-align: center;
-
    .navbar-nav {
-      margin: 32px auto;
+      margin: 2rem auto;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
       max-width: 35.625rem;
-
       .nav-link {
          font-weight: weight(medium);
          font-size: 1rem;
          margin-bottom: .8rem;
       }
    }
-
    .footer__social {
       .social {
          @include flexCenter(row);
          gap: 1rem;
-
          .social__item {
             @include flexCenter(row);
             @include size(2.25rem, 2.25rem);
@@ -48,16 +44,14 @@ footer {
          }
       }
    }
-
    .footer__copyright {
       color: #999;
-      font-size: 12px;
-      padding-top: 20px;
+      font-size: .75rem;
+      padding-top: 1.25rem;
       margin: 0;
-
       .footer__developer {
          display: block;
-         padding-top: 8px;
+         padding-top: .5rem;
       }
    }
 }

@@ -2,12 +2,11 @@
 import * as api from './modules/fetchAPI.js';
 import * as html from './modules/render.js';
 import * as cat from './modules/categoryHandler.js';
+import * as cart from './modules/cartHandler.js';
 
 const burgerBtn = document.getElementById('js-burger');
 const menuNav = document.getElementById('js-menu');
 const navItems = document.querySelectorAll('.menu-btn__burger');
-
-const cartList = [];
 
 
 api.fetchData(api.APICategoties)
@@ -48,9 +47,21 @@ api.fetchData(api.APICatalogHotOffers)
 cat.categoryList.addEventListener('click', cat.displayCategoryProducts);
 cat.categoryBtn.addEventListener('click', cat.toggleCategoryList);
 
+
+html.productCardsHolder.addEventListener('click', cart.addProductToCart);
+cart.cartBtn.addEventListener('click', cart.toggleCartBtn);
+
+// cart.cartStaticHolder.addEventListener('click', cart.removeProductFromCart);
+
+
+
 burgerBtn.addEventListener('click', function () {
    menuNav.classList.toggle('show');
    navItems.forEach((item) => item.classList.toggle('open'));
 });
+
+
+
+
 
 

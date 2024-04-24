@@ -3,6 +3,7 @@ const productCardsHolder = document.getElementById('js-product-cards');
 const hotOffersCardsHolder = document.getElementById('js-hot-offers');
 const countProductsHolder = document.getElementById('js-count-products');
 
+
 const getCategoryHTML = (id, title) => {
    return `
    <li>
@@ -19,28 +20,26 @@ const getProductsHTML = (img, id, title, price, oldprice) => {
       <div class="card-product__text-hold">
          <a href="#" class="card-product__title-link">${title}</a>
          <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
-         <a href="#" class="card-product__btn-add js-icon-cart" data-id="${id}" data-title="${title}"
-         data-price="${price}" data-img="${img}" data-count="1"><svg class='icon icon-cart'>
-            <use xlink:href='#icon-cart-add'></use>
-         </svg></a>
-      </div>
+         </div>
+      <a href="#" class="btn js-icon-cart" data-id="${id}" data-title="${title}"
+            data-price="${price}" data-img="${img}" data-count="1">Add to Cart</i></a>
    </div>`
 }
 
-const getCartProductsListHTML = (index, price, id) => {
+const getCartProductsListHTML = (index, img, price, id, count, title) => {
    return `
    <div class="cart-added-list__item">
-      <button class="cart-added-list__item-btn-delete btn-light js-btn-delete" data-index="${index}">
+      <button class="cart-added-list__item-btn-delete js-btn-delete" data-index="${index}">
          <i class="fa-solid fa-xmark"></i>
        </button>
-      <img src="../img/gallery-3.jpg" alt="" class="cart-added-list__item-img">
+      <img src="../src/img/catalog/${img}" alt="" class="cart-added-list__item-img">
       <p class="cart-added-list__item-text-hold">
-         <a href="#" class="cart-added-list__item-title-link">Lorem ipsum dolor sit amet.</a>
+         <a href="#" class="cart-added-list__item-title-link">${title}</a>
          <span class="cart-added-list__item-meta-list">
             <span class="cart-added-list__item-meta">${price} USD</span>
          </span>
       </p>
-      <p class="cart-added-list__item-count js-input" id="input-count-${id}">3</p>
+      <p class="cart-added-list__item-count js-input" id="input-count-${id}">${count}</p>
       <button class="cart-added-list__item-btn-plus btn-light js-count" data-type="plus"
       data-input="#input-count-${id}" data-index="${index}">
          <i class="fa-solid fa-plus"></i>

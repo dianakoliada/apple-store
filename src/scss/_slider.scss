@@ -3,17 +3,17 @@
    width: 100%;
    padding: 3rem 1rem;
    margin: 1rem auto;
-   background-color: $bg-color;
+   background-color: $main-color;
    .title-square {
       margin-bottom: 3rem;
    }
    .slide-content {
       @include flexCenter(row);
-      margin: 0 30px;
+      margin: 0 1.875rem;
       overflow: hidden;
-      border-radius: 25px;
+      border-radius: 1.6rem;
       .card {
-         border-radius: 25px;
+         border-radius: 1.6rem;
          background-color: $footer-bg-color;
          margin: 1rem  auto;
          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -21,7 +21,7 @@
          .card-content {
             @include flexCenter(column);
             justify-content: flex-start;
-            padding: 10px 14px;
+            padding: .6rem .9rem;
             margin-top: 1rem;
             h2 {
                margin: 0;
@@ -29,13 +29,13 @@
          }
          .image-content {
             position: relative;
-            row-gap: 5px;
-            padding: 25px 0;
+            row-gap: .3rem;
+            padding: 1.6rem 0;
             .overlay {
-               @include positionLeft(absolute, -1rem, 0, 0);
+               @include positionTopLeft(absolute, -1rem, 0, 0);
                @include size(100%, 100%);
                background-color: #0062ffd1;
-               border-radius: 25px 25px 0 25px;
+               border-radius: 1.6rem 1.6rem 0 1.6rem;
                &::before,
                &::after {
                   @include size(2.5rem, 2.5rem);
@@ -46,8 +46,8 @@
                   background-color: #0062ffd1;
                }
                &::after {
-                  width: 41px;
-                  border-radius: 0 25px 0 0;
+                  width: 2.56rem;
+                  border-radius: 0 1.6rem 0 0;
                   background-color: $footer-bg-color;
                }
             }

@@ -9,19 +9,17 @@
       border: 2px solid transparent;
       border-radius: .5rem;
       outline: none;
-      background-color: $bg-color;
+      background-color: $main-color;
       color: $primary-color;
       box-shadow: $box-shadow-main;
       @include transition-ease;
    }
-   
    .input::placeholder,
    .icon {
       color: #999;
    }
-   
    .icon {
-      @include positionLeft(absolute, 13px, 14px, 0);
-      font-size: 20px;
+      @include positionTopLeft(absolute, .8rem, .9rem, 0);
+      font-size: 1.25rem;
    }
 }

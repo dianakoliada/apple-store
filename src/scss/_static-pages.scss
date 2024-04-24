@@ -1,6 +1,6 @@
 article {
    color: $primary-color;
-   background-color: #fff;
+   background-color: $main-color;
    .page-content {
       background-color: #f4f4f4;
       padding: 2rem;
@@ -14,20 +14,18 @@ article {
             color: #7360f2;
          }
          .mobile {
-            margin-right: 10px;
+            margin-right: .625rem;
          }
       }
       .icon {
-         margin: 0 5px 0 1rem;
+         margin: 0 .3rem 0 1rem;
          font-size: 1.2em;
          cursor: pointer;
          color: $secondary-color;
       }
-
       .heart,
       .envelope {
          color: $hover-main-color;
       }
-
    }
 }

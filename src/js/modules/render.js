@@ -30,7 +30,7 @@ const getCartProductsListHTML = (index, img, price, id, count, title) => {
    return `
    <div class="cart-added-list__item">
       <button class="cart-added-list__item-btn-delete js-btn-delete" data-index="${index}">
-         <i class="fa-solid fa-xmark"></i>
+         <i class="fa-solid fa-xmark js-icon-delete"></i>
        </button>
       <img src="../src/img/catalog/${img}" alt="" class="cart-added-list__item-img">
       <p class="cart-added-list__item-text-hold">
@@ -39,14 +39,13 @@ const getCartProductsListHTML = (index, img, price, id, count, title) => {
             <span class="cart-added-list__item-meta">${price} USD</span>
          </span>
       </p>
-      <p class="cart-added-list__item-count js-input" id="input-count-${id}">${count}</p>
-      <button class="cart-added-list__item-btn-plus btn-light js-count" data-type="plus"
-      data-input="#input-count-${id}" data-index="${index}">
-         <i class="fa-solid fa-plus"></i>
+      <p class="cart-added-list__item-count js-display-count" id="js-display-count-${id}">${count}</p>
+      <button class="cart-added-list__item-btn-plus js-count" data-type="plus" data-count="#js-display-count-${id}" data-index="${index}">
+         <i class="fa-solid fa-plus js-count-icon"></i>
       </button>
-      <button class="cart-added-list__item-btn-minus btn-light js-count" data-type="minus"
-      data-input="#input-count-${id}" data-index="${index}">
-         <i class="fa-solid fa-minus"></i>
+      <button class="cart-added-list__item-btn-minus js-count" data-type="minus"
+      data-count="#js-display-count-${id}" data-index="${index}">
+         <i class="fa-solid fa-minus js-count-icon"></i>
       </button>
    </div>`
 }

@@ -48,10 +48,10 @@ cat.categoryList.addEventListener('click', cat.displayCategoryProducts);
 cat.categoryBtn.addEventListener('click', cat.toggleCategoryList);
 
 
-html.productCardsHolder.addEventListener('click', cart.addProductToCart);
+html.productCardsHolder.addEventListener('click', cart.handleCartClicks);
 cart.cartBtn.addEventListener('click', cart.toggleCartBtn);
 
-// cart.cartStaticHolder.addEventListener('click', cart.removeProductFromCart);
+cart.cartStaticHolder.addEventListener('click', cart.handleCartClicks);
 
 
 

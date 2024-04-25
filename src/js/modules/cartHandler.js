@@ -6,8 +6,6 @@ const cartStaticHolder = document.querySelector('.cart-added-list');
 let cartCount = document.querySelectorAll('.js-cart-count');
 const cartList = [];
 
-cartListHolder.innerHTML = `<h2 class="no-result">Cart is empty</h2>`
-
 function isProductInCart(cart, productId) {
    return cart.some(el => el.id === productId);
 }
@@ -16,48 +14,86 @@ function toggleCartBtn() {
    cartListHolder.classList.toggle('show');
 }
 
-function updateCartCount() {
-   let count = cartList.length !== 0 ? cartList.length : 0;
-   return cartCount.forEach(el => el.innerHTML = count);
-}
+function displayCartCount(array) {
+   let totalCount = 0;
 
-function addProductToCart(e) {
-   e.preventDefault();
-   let clickedEl = e.target;
-
-   //get selected product info and add it into cart
-   if (clickedEl.classList.contains('js-icon-cart')) {
-      const productInfo = clickedEl.dataset;
-      if (isProductInCart(cartList, productInfo.id)) {
-         return;
-      }
-
-      cartList.push(productInfo);
+   for (let item of array) {
+      totalCount += parseInt(item.count);
    }
 
-   //display cart list in cart
+   cartCount.forEach(el => el.innerHTML = totalCount);
+}
+
+function displayCartList(array) {
    cartListHolder.innerHTML = '';
-   if (cartList) {
-      cartList.forEach(({ index, img, price, id, count, title }) => {
+   if (array.length === 0) {
+      cartListHolder.innerHTML = `<h2 class="no-result">Cart is empty</h2>`
+   } else {
+      array.forEach(({ img, price, id, count, title }, index) => {
          cartListHolder.insertAdjacentHTML(
             'beforeend',
             html.getCartProductsListHTML(index, img, price, id, count, title));
       });
+      cartListHolder.insertAdjacentHTML('beforeend', `<a href="order-page.html?page=order-page" class="to-order-text no-result-cart-sm">Place an order</a>`);
+   }
+}
+
+function addProductToCart(item) {
+   const productInfo = item.dataset;
+
+   if (isProductInCart(cartList, productInfo.id)) {
+      return;
+   }
+   cartList.push(productInfo);
+
+   displayCartList(cartList);
+   displayCartCount(cartList);
+}
+
+function removeProductFromCart(item) {
+   const idToRemove = item.dataset.index;
+   cartList.splice(idToRemove, 1);
+
+   displayCartList(cartList);
+   displayCartCount(cartList);
+}
+
+function changeProductCartCount(item) {
+   const btnTypeValue = item.getAttribute('data-type');
+   const dataInputValue = item.getAttribute('data-count');
+   let input = document.querySelector(dataInputValue);
+   let countValue = input.innerText;
+
+
+   if (btnTypeValue === 'plus') {
+      input.innerText++;
+   } else if (btnTypeValue === 'minus' && countValue > 1) {
+      input.innerText--;
    }
 
-   //display cart count
-   updateCartCount();
+   let cartIndex = item.getAttribute('data-index');
+   cartList[cartIndex].count = input.innerText;
+   displayCartCount(cartList);
 }
 
-function removeProductFromCart(e) {
+function handleCartClicks(e) {
    e.preventDefault();
    let clickedEl = e.target;
-   console.log("clickedEl: ", clickedEl);
 
-   const idToRemove = clickedEl.dataset.index;
-   console.log("idToRemove: ", idToRemove);
-   console.log("idToRemove: ");
+   if (clickedEl.classList.contains('js-icon-cart')) {
+      addProductToCart(clickedEl);
+   }
+
+   if (clickedEl.nodeName === 'I' && clickedEl.classList.contains('js-icon-delete')) {
+      clickedEl = clickedEl.parentNode;
+      removeProductFromCart(clickedEl);
+   }
+
+   if (clickedEl.nodeName === 'I' && clickedEl.classList.contains('js-count-icon')) {
+      clickedEl = clickedEl.parentNode;
+      changeProductCartCount(clickedEl);
+   }
 }
 
-export { cartList, cartListHolder, cartBtn, cartStaticHolder, addProductToCart, toggleCartBtn, removeProductFromCart };
+export { cartList, cartListHolder, cartBtn, cartStaticHolder, addProductToCart, toggleCartBtn, handleCartClicks };
 

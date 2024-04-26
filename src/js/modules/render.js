@@ -3,6 +3,8 @@ const productCardsHolder = document.getElementById('js-product-cards');
 const hotOffersCardsHolder = document.getElementById('js-hot-offers');
 const countProductsHolder = document.getElementById('js-count-products');
 
+const resetTemplate = `<a href="#" class="dropdown-item">Reset selection</a>`;
+
 
 const getCategoryHTML = (id, title) => {
    return `
@@ -68,4 +70,4 @@ const displayProductCount = (data) => {
    countProductsHolder.innerHTML = data;
 }
 
-export { getCategoryHTML, getProductsHTML, getCartProductsListHTML, getOrderedProductsHTML, displayProductCount, categoryHolder, productCardsHolder, hotOffersCardsHolder, countProductsHolder };
+export { getCategoryHTML, getProductsHTML, getCartProductsListHTML, getOrderedProductsHTML, displayProductCount, categoryHolder, productCardsHolder, hotOffersCardsHolder, countProductsHolder, resetTemplate };

@@ -3,6 +3,7 @@ import * as api from './modules/fetchAPI.js';
 import * as html from './modules/render.js';
 import * as cat from './modules/categoryHandler.js';
 import * as cart from './modules/cartHandler.js';
+import * as search from './modules/searchHandler.js';
 
 const burgerBtn = document.getElementById('js-burger');
 const menuNav = document.getElementById('js-menu');
@@ -12,9 +13,7 @@ const navItems = document.querySelectorAll('.menu-btn__burger');
 api.fetchData(api.APICategoties)
    .then(data => {
       if (data) {
-         html.categoryHolder.insertAdjacentHTML(
-            'beforeend',
-            `<a href="#" class="dropdown-item">Reset selection</a>`);
+         html.categoryHolder.insertAdjacentHTML('beforeend', html.resetTemplate);
          data.forEach(({ id, title }) => {
             html.categoryHolder.insertAdjacentHTML('beforeend', html.getCategoryHTML(id, title));
          });
@@ -52,6 +51,8 @@ html.productCardsHolder.addEventListener('click', cart.handleCartClicks);
 cart.cartBtn.addEventListener('click', cart.toggleCartBtn);
 
 cart.cartStaticHolder.addEventListener('click', cart.handleCartClicks);
+
+search.inputSearch.oninput = search.searchProducts;
 
 
 

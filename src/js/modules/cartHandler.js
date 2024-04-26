@@ -4,7 +4,16 @@ const cartListHolder = document.getElementById('js-cart-list');
 const cartBtn = document.getElementById('js-cart-btn');
 const cartStaticHolder = document.querySelector('.cart-added-list');
 let cartCount = document.querySelectorAll('.js-cart-count');
-const cartList = [];
+
+const cartList = getFromLocalStorage('cartList');
+
+function saveToLocalStorage(key, value) {
+   localStorage.setItem(key, JSON.stringify(value));
+}
+
+function getFromLocalStorage(key) {
+   return JSON.parse(localStorage.getItem(key)) ?? [];
+}
 
 function isProductInCart(cart, productId) {
    return cart.some(el => el.id === productId);
@@ -34,7 +43,9 @@ function displayCartList(array) {
             'beforeend',
             html.getCartProductsListHTML(index, img, price, id, count, title));
       });
-      cartListHolder.insertAdjacentHTML('beforeend', `<a href="order-page.html?page=order-page" class="to-order-text no-result-cart-sm">Place an order</a>`);
+      cartListHolder.insertAdjacentHTML('beforeend',
+         `<a href="order-page.html?page=order-page" class="to-order-text no-result-cart-sm">Place an order</a>`
+      );
    }
 }
 
@@ -46,6 +57,7 @@ function addProductToCart(item) {
    }
    cartList.push(productInfo);
 
+   saveToLocalStorage('cartList', cartList);
    displayCartList(cartList);
    displayCartCount(cartList);
 }
@@ -54,6 +66,7 @@ function removeProductFromCart(item) {
    const idToRemove = item.dataset.index;
    cartList.splice(idToRemove, 1);
 
+   saveToLocalStorage('cartList', cartList);
    displayCartList(cartList);
    displayCartCount(cartList);
 }
@@ -64,7 +77,6 @@ function changeProductCartCount(item) {
    let input = document.querySelector(dataInputValue);
    let countValue = input.innerText;
 
-
    if (btnTypeValue === 'plus') {
       input.innerText++;
    } else if (btnTypeValue === 'minus' && countValue > 1) {
@@ -73,6 +85,7 @@ function changeProductCartCount(item) {
 
    let cartIndex = item.getAttribute('data-index');
    cartList[cartIndex].count = input.innerText;
+   saveToLocalStorage('cartList', cartList);
    displayCartCount(cartList);
 }
 
@@ -94,6 +107,9 @@ function handleCartClicks(e) {
       changeProductCartCount(clickedEl);
    }
 }
+
+displayCartList(cartList);
+displayCartCount(cartList);
 
 export { cartList, cartListHolder, cartBtn, cartStaticHolder, addProductToCart, toggleCartBtn, handleCartClicks };
 

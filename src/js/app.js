@@ -10,48 +10,40 @@ const menuNav = document.getElementById('js-menu');
 const navItems = document.querySelectorAll('.menu-btn__burger');
 
 
-api.fetchData(api.APICategoties)
-   .then(data => {
-      if (data) {
-         html.categoryHolder.insertAdjacentHTML('beforeend', html.resetTemplate);
-         data.forEach(({ id, title }) => {
-            html.categoryHolder.insertAdjacentHTML('beforeend', html.getCategoryHTML(id, title));
-         });
-      }
-   });
+(async function () {
+   const data = await api.fetchData(api.APICategoties);
+   if (data) {
+      html.categoryHolder.insertAdjacentHTML('beforeend',
+         html.resetSelectionTemplate);
 
-api.fetchData(api.APICatalog)
-   .then(data => {
-      if (data) {
-         data.forEach(({ img, id, title, price, oldprice }) => {
-            html.productCardsHolder.insertAdjacentHTML(
-               'beforeend',
-               html.getProductsHTML(img, id, title, price, oldprice));
-         });
-         html.displayProductCount(data.length);
-      }
-   });
+      api.processAPIData(data, html.categoryHolder,
+         ({ id, title }) => html.getCategoryHTML(id, title));
+   }
+})();
 
-api.fetchData(api.APICatalogHotOffers)
-   .then(data => {
-      if (data) {
-         data.forEach(({ img, id, title, price, oldprice }) => {
-            html.hotOffersCardsHolder.insertAdjacentHTML(
-               'beforeend',
-               html.getProductsHTML(img, id, title, price, oldprice));
-         });
-      }
-   });
+(async function () {
+   const data = await api.fetchData(api.APICatalog);
+   if (data) {
+      api.processAPIData(data, html.productCardsHolder,
+         ({ img, id, title, price, oldprice }) => html.getProductsHTML(img, id, title, price, oldprice));
+      html.displayProductCount(data.length);
+   }
+})();
+
+(async function () {
+   const data = await api.fetchData(api.APICatalogHotOffers);
+   if (data) {
+      api.processAPIData(data, html.hotOffersCardsHolder,
+         ({ img, id, title, price, oldprice }) => html.getProductsHTML(img, id, title, price, oldprice));
+   }
+})();
 
 cat.categoryList.addEventListener('click', cat.displayCategoryProducts);
 cat.categoryBtn.addEventListener('click', cat.toggleCategoryList);
-
-
 html.productCardsHolder.addEventListener('click', cart.handleCartClicks);
+html.hotOffersCardsHolder.addEventListener('click', cart.handleCartClicks);
 cart.cartBtn.addEventListener('click', cart.toggleCartBtn);
-
 cart.cartStaticHolder.addEventListener('click', cart.handleCartClicks);
-
 search.inputSearch.oninput = search.searchProducts;
 
 

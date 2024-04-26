@@ -14,4 +14,12 @@ const fetchData = async (APIname) => {
    }
 }
 
-export { baseAPI, APICategoties, APICatalog, APICatalogHotOffers, APISearch, fetchData };
+function processAPIData(data, container, getHTMLfunc) {
+   if (data) {
+      data.forEach((item) => {
+         container.insertAdjacentHTML('beforeend', getHTMLfunc(item));
+      })
+   }
+}
+
+export { baseAPI, APICategoties, APICatalog, APICatalogHotOffers, APISearch, fetchData, processAPIData };

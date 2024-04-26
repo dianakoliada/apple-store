@@ -1471,6 +1471,7 @@ article .page-content .envelope {
   border: none;
   outline: none;
   border-radius: 0.5rem;
+  padding: 1rem;
 }
 
 .order-page .flex-holder .page-content-order .order-form textarea {

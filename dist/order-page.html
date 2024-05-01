@@ -15,9 +15,9 @@
    <meta name="msapplication-config" content="../src/img/favicon/browserconfig.xml">
    <meta name="theme-color" content="#ffffff">
    <!-- CSS Swiper -->
-   <link rel="stylesheet" href="css/swiper-bundle.min.css?_v=20240426170315">
+   <link rel="stylesheet" href="css/swiper-bundle.min.css?_v=20240501185954">
    <!-- CSS -->
-   <link rel="stylesheet" href="css/style.min.css?_v=20240426170315">
+   <link rel="stylesheet" href="css/style.min.css?_v=20240501185954">
 </head>
 
 <body>
@@ -134,44 +134,43 @@
    </div>
 </header>
 
-   <div class="order-page">
+   <div class="order-page" id="js-order-page">
       <div class="container">
          <h2 class="world-wrap">Order details</h2>
          <div class="flex-holder">
-            <div class="page-content page-content-info" id="js-test">
-               <h3 class="cart-ordered-list__total">Your order is</h3>
-               <div class="ordered-list" id="js-cart-total">
-                  <!-- here product list are displayed -->
-               </div>
-               <h3 class="cart-ordered-list__total" id="js-total-sum">Total sum is</h3>
+            <div class="page-content page-content-info" id="js-order-total">
+               <!-- here product list are displayed -->
             </div>
             <div class="page-content page-content-order">
                <div class="page-content page-content-form-wrap" id="js-form-wrap">
                   <p>
                      Please fill out the form to complete your order:
                   </p>
-                  <form class="order-form" id="js-form">
+                  <form action="/" method="GET" class="order-form" id="js-form">
                      <div class="form-group">
-                        <label for="name" class="order-text">Name:</label>
-                        <input type="text" id="name" name="name" required class="order-input" placeholder="" value="">
+                        <label for="name">Full name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" value="" required>
                      </div>
                      <div class="form-group">
-                        <label for="phone" class="order-text">Phone number:</label>
-                        <input type="tel" placeholder="" id="phone" name="phone" required class="order-input" value="">
+                        <label for="phone">Phone number:</label>
+                        <input type="tel" placeholder="+38(0**)** ** ***" id="phone" name="phone" value="+38" required>
+                        <span id="error-message" class="error"></span>
                      </div>
                      <div class="form-group">
-                        <label for="email" class="order-text">Email:</label>
-                        <input type="email" id="email" name="to" required class="order-input" placeholder="" value="">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="to" placeholder="example@gmail.com" value="" required>
                      </div>
                      <div class="form-group">
-                        <label for="address" class="order-text">Delivery address:</label>
-                        <textarea id="address" name="address" rows="4" class="order-input" placeholder=""></textarea>
+                        <label for="address">Delivery address:</label>
+                        <textarea id="address" name="address" rows="4" placeholder="Enter delivery address"
+                           required></textarea>
                      </div>
-                     <button type="submit" class="btn" id="js-order-btn">Order now</button>
+                     <div class="form-group">
+                        <label for="comment">Сomment:</label>
+                        <textarea id="comment" name="comment" rows="2" placeholder="Comment for the staff"></textarea>
+                     </div>
+                     <button type="submit" class="btn" id="js-submit">Order now</button>
                   </form>
-               </div>
-               <div class="success hide" id="js-success">
-                  Thanks! <br> Your order has been accepted and will be processed soon.
                </div>
             </div>
          </div>
@@ -221,10 +220,10 @@
    </div>
 </footer>
 
-<script src="js/swiper-bundle.min.js?_v=20240426170315"></script>
-<script src="js/swiper.js?_v=20240426170315"></script>
-<script src="https://kit.fontawesome.com/9e1cc857b5.js?_v=20240426170315" crossorigin="anonymous"></script>
-<script src="js/app.min.js?_v=20240426170315"></script>
+<script src="js/swiper-bundle.min.js?_v=20240501185954"></script>
+<script src="js/swiper.js?_v=20240501185954"></script>
+<script src="https://kit.fontawesome.com/9e1cc857b5.js?_v=20240501185954" crossorigin="anonymous"></script>
+<script src="js/app.min.js?_v=20240501185954"></script>
 </body>
 
 </html>

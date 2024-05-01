@@ -1,3 +1,4 @@
+import * as utils from './utils.js';
 import * as api from './fetchAPI.js';
 import * as html from './render.js';
 
@@ -14,7 +15,7 @@ function displayCategoryProducts(e) {
       .then(data => {
          if (!Array.isArray(data)) {
             html.productCardsHolder.innerHTML = '<h2>No products found</h2>';
-            html.displayProductCount(0);
+            utils.displayProductCount(0);
 
          } else {
             html.productCardsHolder.innerHTML = '';
@@ -24,7 +25,7 @@ function displayCategoryProducts(e) {
                   'beforeend',
                   html.getProductsHTML(img, id, title, price, oldprice));
             });
-            html.displayProductCount(data.length);
+            utils.displayProductCount(data.length);
          }
       });
 }

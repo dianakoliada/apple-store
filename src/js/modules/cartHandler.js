@@ -1,23 +1,12 @@
 import * as html from './render.js';
+import * as utils from './utils.js';
 
 const cartListHolder = document.getElementById('js-cart-list');
 const cartBtn = document.getElementById('js-cart-btn');
 const cartStaticHolder = document.querySelector('.cart-added-list');
 let cartCount = document.querySelectorAll('.js-cart-count');
 
-const cartList = getFromLocalStorage('cartList');
-
-function saveToLocalStorage(key, value) {
-   localStorage.setItem(key, JSON.stringify(value));
-}
-
-function getFromLocalStorage(key) {
-   return JSON.parse(localStorage.getItem(key)) ?? [];
-}
-
-function isProductInCart(cart, productId) {
-   return cart.some(el => el.id === productId);
-}
+const cartList = utils.getFromLocalStorage('cartList');
 
 function toggleCartBtn() {
    cartListHolder.classList.toggle('show');
@@ -34,17 +23,20 @@ function displayCartCount(array) {
 }
 
 function displayCartList(array) {
-   cartListHolder.innerHTML = '';
-   if (array.length === 0) {
+   if (cartListHolder) {
+      cartListHolder.innerHTML = '';
+   }
+
+   if (array.length === 0 && cartListHolder) {
       cartListHolder.innerHTML = `<h2 class="no-result">Cart is empty</h2>`
-   } else {
+   } else if (cartListHolder) {
       array.forEach(({ img, price, id, count, title }, index) => {
          cartListHolder.insertAdjacentHTML(
             'beforeend',
             html.getCartProductsListHTML(index, img, price, id, count, title));
       });
       cartListHolder.insertAdjacentHTML('beforeend',
-         `<a href="order-page.html?page=order-page" class="to-order-text no-result-cart-sm">Place an order</a>`
+         `<a href="order-page.html" class="js-order-page">Place an order</a>`
       );
    }
 }
@@ -52,12 +44,12 @@ function displayCartList(array) {
 function addProductToCart(item) {
    const productInfo = item.dataset;
 
-   if (isProductInCart(cartList, productInfo.id)) {
+   if (utils.isProductInCart(cartList, productInfo.id)) {
       return;
    }
    cartList.push(productInfo);
 
-   saveToLocalStorage('cartList', cartList);
+   utils.saveToLocalStorage('cartList', cartList);
    displayCartList(cartList);
    displayCartCount(cartList);
 }
@@ -66,7 +58,7 @@ function removeProductFromCart(item) {
    const idToRemove = item.dataset.index;
    cartList.splice(idToRemove, 1);
 
-   saveToLocalStorage('cartList', cartList);
+   utils.saveToLocalStorage('cartList', cartList);
    displayCartList(cartList);
    displayCartCount(cartList);
 }
@@ -85,13 +77,16 @@ function changeProductCartCount(item) {
 
    let cartIndex = item.getAttribute('data-index');
    cartList[cartIndex].count = input.innerText;
-   saveToLocalStorage('cartList', cartList);
+   utils.saveToLocalStorage('cartList', cartList);
    displayCartCount(cartList);
 }
 
 function handleCartClicks(e) {
-   e.preventDefault();
    let clickedEl = e.target;
+
+   if (clickedEl.classList.contains('js-icon-cart') && clickedEl.classList.contains('js-icon-delete') && clickedEl.classList.contains('js-count-icon')) {
+      e.preventDefault();
+   }
 
    if (clickedEl.classList.contains('js-icon-cart')) {
       addProductToCart(clickedEl);
@@ -112,4 +107,25 @@ displayCartList(cartList);
 displayCartCount(cartList);
 
 export { cartList, cartListHolder, cartBtn, cartStaticHolder, addProductToCart, toggleCartBtn, handleCartClicks };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,9 +1,17 @@
 const categoryHolder = document.getElementById('js-category-list');
 const productCardsHolder = document.getElementById('js-product-cards');
 const hotOffersCardsHolder = document.getElementById('js-hot-offers');
-const countProductsHolder = document.getElementById('js-count-products');
 
 const resetSelectionTemplate = `<a href="#" class="dropdown-item">Reset selection</a>`;
+const placeAnOrderTemplate = `<a href="order-page.html" target="_blanc" class="to-order-text no-result-cart-sm">Place an order</a>`;
+const emptyOrderCartTemplate = `
+   <div class="order-page empty-cart-holder">
+      <h2>Your cart is empty now </h2>
+      <a href="index.html">
+         <i class="fa-solid fa-cart-shopping icon icon-cart"></i>
+         Back to the store
+      </a>
+   </div>`;
 
 
 const getCategoryHTML = (id, title) => {
@@ -52,22 +60,30 @@ const getCartProductsListHTML = (index, img, price, id, count, title) => {
    </div>`
 }
 
-const getOrderedProductsHTML = (title, count, price) => {
+const getOrderedProductsHTML = (title, count, price, img) => {
    return `
    <div class="cart-ordered-list__item">
       <div class="cart-ordered-list__item-img-hold">
-         <img src="./img/gallery-1.jpg" alt="${title}" class="cart-ordered-list__item-img">
+         <img src="../src/img/catalog/${img}" alt="${title}" class="cart-ordered-list__item-img">
       </div>
       <div class="cart-ordered-list__item-text-hold">
-         <div class="cart-ordered-list__item-title">${title}</div>
-         <div class="cart-ordered-list__item-price">amount ${count}</div>
-         <div class="cart-ordered-list__item-price">${price} USD</div>
+         <p>${title}</p>
+         <p>amount ${count}</p>
+         <p>${price} USD</p>
       </div>
    </div>`
 }
 
-const displayProductCount = (data) => {
-   countProductsHolder.innerHTML = data;
+const getOrderSuccessHTML = (num) => {
+   return `
+   <div class="page-content success">
+      <p class="page-content__success">Thank you!</p>
+      <p class="page-content__success">Your order has been accepted!</p>
+      <p class="page-content__success">The order number is: ${num}</p>
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-regular fa-circle-check"></i>
+      <p class="page-content__success">Our staff will contact you in the near term!</p>
+   </div>`
 }
 
-export { getCategoryHTML, getProductsHTML, getCartProductsListHTML, getOrderedProductsHTML, displayProductCount, categoryHolder, productCardsHolder, hotOffersCardsHolder, countProductsHolder, resetSelectionTemplate };
+export { getCategoryHTML, getProductsHTML, getCartProductsListHTML, getOrderedProductsHTML, getOrderSuccessHTML, categoryHolder, productCardsHolder, hotOffersCardsHolder, resetSelectionTemplate, placeAnOrderTemplate, emptyOrderCartTemplate };

@@ -15,22 +15,38 @@
       }
       .page-content-info {
          .cart-ordered-list__item {
+            border-bottom: 1px solid #dedede;
             display: flex;
-            gap: 1.25rem;
+            justify-content: center;
+            gap: 1rem;
             margin-bottom: 1rem;
+            &:last-of-type {
+               border-bottom: none;
+               margin-bottom: 2.5rem;
+            }
             .cart-ordered-list__item-img-hold {
-               @include size(10.6rem, 31%);
+               @include size(8rem, 31%);
                border-radius: .5rem;
                .cart-ordered-list__item-img {
+                  min-width: 8rem;
+                  min-height: 8rem;
                   width: 100%;
                   border-radius: .5rem;
                   overflow: hidden;
                }
             }
             .cart-ordered-list__item-text-hold {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               row-gap: .3rem;
                width: 18.75rem;
                margin-top: .625rem;
             }
+         }
+         .total-sum {
+            font-weight: weight(bold);
+            font-size: 1.4em;
          }
       }
       .page-content-order {
@@ -42,9 +58,7 @@
             flex-direction: column;
             row-gap: 1.56rem;
             width: 100%;
-            .form-group {
-               padding: 0 1rem;
-            }
+            padding: 0 1rem;
             input,
             textarea {
                @include size(100%, 1.9rem);
@@ -54,11 +68,23 @@
                border-radius: .5rem;
                padding: 1rem;
             }
+            input::placeholder,
+            textarea::placeholder {
+               font-family: inherit;
+               font-size: inherit;
+               color: #dedede;
+            }
             textarea {
                height: 5rem;
             }
             label {
                line-height: 2;
+               padding-left: .7rem;
+            }
+            span {
+               color: red;
+               font-size: .9em;
+               padding-left: .7rem;
             }
             .btn,
             .form-group {
@@ -70,11 +96,17 @@
    }
 }
 
-.cart-empty-icon-holder {
-   width: 40%;
-   margin: 2.2rem 0;
-}
+.empty-cart-holder {
+   @include flexCenter(column);
+   a {
+      display: block;
+      text-align: center;
+      font-size: 1.4em;
 
-.cart-empty-icon {
-   width: 100%;
+      .icon-cart {
+         color: $hover-main-color;
+         font-size: 3rem;
+         display: block;
+      }
+   }
 }

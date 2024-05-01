@@ -35,17 +35,19 @@
          .page-content-info {
             width: 100%;
          }
-         .form-group {
-            @include flexCenter(column);
-            width: 100%;
-         }
-         p {
-            padding: 0 1rem;
-            text-align: center;
-            font-weight: weight(bold);
-         }
-         .order-btn {
-            margin: 0 auto;
+         .page-content-order {
+            .form-group {
+               @include flexStart(column);
+               width: 100%;
+            }
+            p {
+               padding: 0 1rem;
+               text-align: center;
+               font-weight: weight(bold);
+            }
+            .order-btn {
+               margin: 0 auto;
+            }
          }
       } 
    }
@@ -73,6 +75,11 @@
    }
    .order-page {
       .flex-holder {
+         .page-content-info {
+            p {
+               font-size: 1em;
+            }
+         }
          .page-content-order {
             padding: 2rem 0;
          }

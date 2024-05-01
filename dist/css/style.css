@@ -1419,28 +1419,55 @@ article .page-content .envelope {
 }
 
 .order-page .flex-holder .page-content-info .cart-ordered-list__item {
+  border-bottom: 1px solid #dedede;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1.25rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
+.order-page .flex-holder .page-content-info .cart-ordered-list__item:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2.5rem;
+}
+
 .order-page .flex-holder .page-content-info .cart-ordered-list__item .cart-ordered-list__item-img-hold {
-  width: 10.6rem;
+  width: 8rem;
   height: 31%;
   border-radius: 0.5rem;
 }
 
 .order-page .flex-holder .page-content-info .cart-ordered-list__item .cart-ordered-list__item-img-hold .cart-ordered-list__item-img {
+  min-width: 8rem;
+  min-height: 8rem;
   width: 100%;
   border-radius: 0.5rem;
   overflow: hidden;
 }
 
 .order-page .flex-holder .page-content-info .cart-ordered-list__item .cart-ordered-list__item-text-hold {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  row-gap: 0.3rem;
   width: 18.75rem;
   margin-top: 0.625rem;
+}
+
+.order-page .flex-holder .page-content-info .total-sum {
+  font-weight: 700;
+  font-size: 1.4em;
 }
 
 .order-page .flex-holder .page-content-order p {
@@ -1457,9 +1484,6 @@ article .page-content .envelope {
           flex-direction: column;
   row-gap: 1.56rem;
   width: 100%;
-}
-
-.order-page .flex-holder .page-content-order .order-form .form-group {
   padding: 0 1rem;
 }
 
@@ -1474,12 +1498,50 @@ article .page-content .envelope {
   padding: 1rem;
 }
 
+.order-page .flex-holder .page-content-order .order-form input::-webkit-input-placeholder, .order-page .flex-holder .page-content-order .order-form textarea::-webkit-input-placeholder {
+  font-family: inherit;
+  font-size: inherit;
+  color: #dedede;
+}
+
+.order-page .flex-holder .page-content-order .order-form input::-moz-placeholder, .order-page .flex-holder .page-content-order .order-form textarea::-moz-placeholder {
+  font-family: inherit;
+  font-size: inherit;
+  color: #dedede;
+}
+
+.order-page .flex-holder .page-content-order .order-form input:-ms-input-placeholder, .order-page .flex-holder .page-content-order .order-form textarea:-ms-input-placeholder {
+  font-family: inherit;
+  font-size: inherit;
+  color: #dedede;
+}
+
+.order-page .flex-holder .page-content-order .order-form input::-ms-input-placeholder, .order-page .flex-holder .page-content-order .order-form textarea::-ms-input-placeholder {
+  font-family: inherit;
+  font-size: inherit;
+  color: #dedede;
+}
+
+.order-page .flex-holder .page-content-order .order-form input::placeholder,
+.order-page .flex-holder .page-content-order .order-form textarea::placeholder {
+  font-family: inherit;
+  font-size: inherit;
+  color: #dedede;
+}
+
 .order-page .flex-holder .page-content-order .order-form textarea {
   height: 5rem;
 }
 
 .order-page .flex-holder .page-content-order .order-form label {
   line-height: 2;
+  padding-left: 0.7rem;
+}
+
+.order-page .flex-holder .page-content-order .order-form span {
+  color: red;
+  font-size: 0.9em;
+  padding-left: 0.7rem;
 }
 
 .order-page .flex-holder .page-content-order .order-form .btn,
@@ -1488,13 +1550,32 @@ article .page-content .envelope {
   margin: 0 auto;
 }
 
-.cart-empty-icon-holder {
-  width: 40%;
-  margin: 2.2rem 0;
+.empty-cart-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.cart-empty-icon {
-  width: 100%;
+.empty-cart-holder a {
+  display: block;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.empty-cart-holder a .icon-cart {
+  color: #0B60E7;
+  font-size: 3rem;
+  display: block;
 }
 
 @media screen and (max-width: 1074px) {
@@ -1548,16 +1629,16 @@ article .page-content .envelope {
     width: 100%;
   }
 
-  .order-page .flex-holder .form-group {
+  .order-page .flex-holder .page-content-order .form-group {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1565,13 +1646,13 @@ article .page-content .envelope {
     width: 100%;
   }
 
-  .order-page .flex-holder p {
+  .order-page .flex-holder .page-content-order p {
     padding: 0 1rem;
     text-align: center;
     font-weight: 700;
   }
 
-  .order-page .flex-holder .order-btn {
+  .order-page .flex-holder .page-content-order .order-btn {
     margin: 0 auto;
   }
 }
@@ -1607,6 +1688,10 @@ article .page-content .envelope {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .order-page .flex-holder .page-content-info p {
+    font-size: 1em;
   }
 
   .order-page .flex-holder .page-content-order {

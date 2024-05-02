@@ -5,7 +5,7 @@ const hotOffersCardsHolder = document.getElementById('js-hot-offers');
 const resetSelectionTemplate = `<a href="#" class="dropdown-item">Reset selection</a>`;
 const placeAnOrderTemplate = `<a href="order-page.html" target="_blanc" class="to-order-text no-result-cart-sm">Place an order</a>`;
 const emptyOrderCartTemplate = `
-   <div class="order-page empty-cart-holder">
+   <div class="empty-cart-holder">
       <h2>Your cart is empty now </h2>
       <a href="index.html">
          <i class="fa-solid fa-cart-shopping icon icon-cart"></i>
@@ -77,11 +77,10 @@ const getOrderedProductsHTML = (title, count, price, img) => {
 const getOrderSuccessHTML = (num) => {
    return `
    <div class="page-content success">
+      <i class="fa-regular fa-circle-check icon"></i>
       <p class="page-content__success">Thank you!</p>
       <p class="page-content__success">Your order has been accepted!</p>
-      <p class="page-content__success">The order number is: ${num}</p>
-      <i class="fa-solid fa-circle-check"></i>
-      <i class="fa-regular fa-circle-check"></i>
+      <p class="page-content__success world-wrap">The order number is: ${num}</p>
       <p class="page-content__success">Our staff will contact you in the near term!</p>
    </div>`
 }

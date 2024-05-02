@@ -132,6 +132,88 @@ table {
   border-spacing: 0;
 }
 
+@-webkit-keyframes fall {
+  0% {
+    -webkit-transform: translateY(-200px);
+            transform: translateY(-200px);
+    opacity: 0;
+  }
+
+  20%, 50%, 80%, to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+
+  40% {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+
+  70% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+
+  85% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+
+@keyframes fall {
+  0% {
+    -webkit-transform: translateY(-200px);
+            transform: translateY(-200px);
+    opacity: 0;
+  }
+
+  20%, 50%, 80%, to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+
+  40% {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+
+  70% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+
+  85% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+
+@-webkit-keyframes spinner {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -147,6 +229,7 @@ body {
   line-height: 1.6;
   height: 100vh;
   color: #444448;
+  position: relative;
 }
 
 h1,
@@ -200,14 +283,6 @@ svg {
 
 .hide {
   display: none;
-}
-
-.success {
-  margin: 1.8rem auto;
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: #2dd36f;
-  text-align: center;
 }
 
 .line-heigh {
@@ -345,7 +420,13 @@ svg {
 
 header {
   width: 100%;
-  margin-top: 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: #fff;
+  -webkit-box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);
+          box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);
 }
 
 header .navigation__hold {
@@ -358,6 +439,7 @@ header .navigation__hold {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 2rem 0.8rem;
 }
 
 header .navigation__hold .navigation__left,
@@ -506,6 +588,61 @@ header .navigation__hold .navigation__middle {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.loader-container {
+  width: 100%;
+  position: fixed;
+  top: 12rem;
+  left: 0;
+  z-index: 999;
+}
+
+.loader-container .aligning {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.loader-container .aligning .loading div {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 100%;
+  border-right: solid 5px #0B60E7;
+  border-left: solid 5px #f7f7f7;
+  border-top: solid 5px #f7f7f7;
+  border-bottom: solid 5px #f7f7f7;
+  -webkit-animation: spinner 1.5s infinite;
+          animation: spinner 1.5s infinite;
+}
+
+.loader-container .aligning p {
+  text-align: center;
+  color: #0B60E7;
+}
+
+.end-loading {
+  -webkit-filter: opacity(0);
+          filter: opacity(0);
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
+  visibility: hidden;
+}
+
+main {
+  margin-top: 10rem;
 }
 
 main .catalog .catalog__header {
@@ -1305,6 +1442,7 @@ footer .footer__copyright .footer__developer {
 }
 
 article {
+  margin-top: 10rem;
   color: #000;
   background-color: #fff;
 }
@@ -1344,9 +1482,9 @@ article .page-content .envelope {
 }
 
 .input-group {
+  margin: 10rem 0 -6.8rem 0;
   position: relative;
   max-width: 100%;
-  margin: 2.5rem auto;
 }
 
 .input-group .input {
@@ -1391,6 +1529,10 @@ article .page-content .envelope {
   left: 0.9rem;
   z-index: 0;
   font-size: 1.25rem;
+}
+
+.order-page {
+  margin-top: 10rem;
 }
 
 .order-page .flex-holder {
@@ -1529,6 +1671,12 @@ article .page-content .envelope {
   color: #dedede;
 }
 
+.order-page .flex-holder .page-content-order .order-form input:focus,
+.order-page .flex-holder .page-content-order .order-form textarea:focus {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .order-page .flex-holder .page-content-order .order-form textarea {
   height: 5rem;
 }
@@ -1542,6 +1690,11 @@ article .page-content .envelope {
   color: red;
   font-size: 0.9em;
   padding-left: 0.7rem;
+}
+
+.order-page .flex-holder .page-content-order .order-form .btn {
+  border: none;
+  outline: none;
 }
 
 .order-page .flex-holder .page-content-order .order-form .btn,
@@ -1578,7 +1731,27 @@ article .page-content .envelope {
   display: block;
 }
 
-@media screen and (max-width: 1074px) {
+.success {
+  padding: 0 1rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #2dd36f;
+  text-align: center;
+}
+
+.success .icon {
+  padding-bottom: 2rem;
+  font-size: 5rem;
+  -webkit-animation: fall 1s linear;
+          animation: fall 1s linear;
+}
+
+.success p {
+  font-size: 0.9em;
+  line-height: 60px;
+}
+
+@media screen and (max-width: 1115px) {
   header .navigation__hold .navigation__left .menu-btn {
     display: block;
   }
@@ -1696,5 +1869,17 @@ article .page-content .envelope {
 
   .order-page .flex-holder .page-content-order {
     padding: 2rem 0;
+  }
+
+  .success {
+    margin-bottom: 5rem;
+  }
+
+  .success .icon {
+    font-size: 3.5rem;
+  }
+
+  .success p {
+    font-size: 0.8em;
   }
 }

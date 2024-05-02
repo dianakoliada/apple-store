@@ -1,10 +1,16 @@
 header {
    width: 100%;
-   margin-top: 3rem;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 9;
+   background-color: $main-color;
+   box-shadow: $box-shadow-main;
    .navigation__hold {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 2rem .8rem;
       .navigation__left,
       .navigation__right {
          width: 26.8rem;

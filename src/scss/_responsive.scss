@@ -85,4 +85,13 @@
          }
       }
    }
+   .success {
+      margin-bottom: 5rem;
+      .icon {
+         font-size: 3.5rem;
+      }
+      p {
+         font-size: .8em;
+      }
+   }
 }

@@ -6,7 +6,6 @@ const orderPageHolder = document.getElementById('js-order-page');
 const phoneInput = document.getElementById("phone");
 let errorMessage = document.getElementById('error-message');
 const form = document.getElementById('js-form');
-const submit = document.getElementById('js-submit');
 
 function getOrderTotalSum() {
    let totalSum = 0;
@@ -41,14 +40,28 @@ function onTypeTelHandler(e) {
       e.preventDefault();
 
       errorMessage.innerText = 'Please, enter your phone number';
-   } else if (phoneInput.value.length !== 12) {
-      errorMessage.innerText = 'The phone number should contain exactly 13 digits';
    } else {
       errorMessage.innerText = '';
    }
 }
 
+function checkTypeTelAmount() {
+   if (phoneInput.value.length < 12 && phoneInput.value.length > 0) {
+      errorMessage.innerText = 'The phone number should contain exactly 12 digits';
+      phoneInput.style.border = "1px solid red";
+   } else {
+      phoneInput.style.border = "none";
+      errorMessage.innerText = '';
+   }
+}
+
+function generateOrderNumber() {
+   let randomNum = Math.floor(Math.random() * 1000);
+   let orderNum = `${randomNum}`.padStart(3, '0');
+   return orderNum;
+}
+let orderNumber = generateOrderNumber();
+
 displayOrderList(cart.cartList);
 
-
-export { displayOrderList, onTypeTelHandler, orderTotalHolder, phoneInput, orderPageHolder, form };
+export { displayOrderList, onTypeTelHandler, checkTypeTelAmount, phoneInput, orderPageHolder, form, errorMessage, orderNumber };

@@ -1,4 +1,5 @@
 .order-page {
+   margin-top: 10rem;
    .flex-holder {
       width: 100%;
       display: flex;
@@ -74,6 +75,10 @@
                font-size: inherit;
                color: #dedede;
             }
+            input:focus,
+            textarea:focus {
+               box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
             textarea {
                height: 5rem;
             }
@@ -85,6 +90,10 @@
                color: red;
                font-size: .9em;
                padding-left: .7rem;
+            }
+            .btn {
+               border: none;
+               outline: none;
             }
             .btn,
             .form-group {
@@ -110,3 +119,23 @@
       }
    }
 }
+
+.success {
+   // margin-bottom: 260px;
+   padding: 0 1rem;
+   font-size: 1.9rem;
+   font-weight: weight(bold);
+   color: #2dd36f;
+   text-align: center;
+   .icon {
+      padding-bottom: 2rem;
+      font-size: 5rem;
+      animation: fall 1s linear;
+   }
+   p {
+      font-size: .9em;
+      line-height: 60px;
+   }
+}
+
+

@@ -3,8 +3,9 @@ import * as html from './render.js';
 
 const orderTotalHolder = document.getElementById('js-order-total');
 const orderPageHolder = document.getElementById('js-order-page');
-const phoneInput = document.getElementById("phone");
+const phoneInput = document.getElementById('phone');
 let errorMessage = document.getElementById('error-message');
+const formHolder = document.getElementById('js-form-holder');
 const form = document.getElementById('js-form');
 
 function getOrderTotalSum() {
@@ -21,8 +22,9 @@ function displayOrderList(array) {
       orderTotalHolder.innerHTML = '';
    }
 
-   if (array.length === 0 && orderTotalHolder) {
-      orderTotalHolder.innerHTML = html.emptyOrderCartTemplate;
+   if (array.length === 0 && orderPageHolder) {
+      orderPageHolder.innerHTML = html.emptyOrderCartTemplate;
+      formHolder.classList.add('hide');
    } else if (orderTotalHolder) {
       array.forEach(({ title, count, price, img }) => {
          orderTotalHolder.insertAdjacentHTML(

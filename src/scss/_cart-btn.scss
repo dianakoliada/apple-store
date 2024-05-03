@@ -86,6 +86,7 @@
          .cart-added-list__item-btn-delete,
          .cart-added-list__item-btn-plus,
          .cart-added-list__item-btn-minus {
+            color: #6C798E;
             cursor: pointer;
             position: absolute;
             border: none;
@@ -93,7 +94,6 @@
          .cart-added-list__item-btn-plus,
          .cart-added-list__item-btn-minus {
             font-size: 1.1rem;
-            color: #6C798E;
             background-color: transparent;
          }
          .cart-added-list__item-btn-delete {

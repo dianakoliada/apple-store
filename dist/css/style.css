@@ -704,7 +704,7 @@ main .catalog .catalog__header .catalog__select-category .dropdown-content .drop
   text-decoration: none;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
   min-width: 12.5rem;
   border-radius: 0.625rem;
@@ -1113,6 +1113,7 @@ main .gallery .gallery__item-img {
 .cart-added-list .cart-added-list__item-list .cart-added-list__item .cart-added-list__item-btn-delete,
 .cart-added-list .cart-added-list__item-list .cart-added-list__item .cart-added-list__item-btn-plus,
 .cart-added-list .cart-added-list__item-list .cart-added-list__item .cart-added-list__item-btn-minus {
+  color: #6C798E;
   cursor: pointer;
   position: absolute;
   border: none;
@@ -1121,7 +1122,6 @@ main .gallery .gallery__item-img {
 .cart-added-list .cart-added-list__item-list .cart-added-list__item .cart-added-list__item-btn-plus,
 .cart-added-list .cart-added-list__item-list .cart-added-list__item .cart-added-list__item-btn-minus {
   font-size: 1.1rem;
-  color: #6C798E;
   background-color: transparent;
 }
 
@@ -1616,11 +1616,13 @@ article .page-content .envelope {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 1.56rem;
+  width: 100%;
+  padding: 0 1rem;
 }
 
 .order-page .flex-holder .page-content-order .order-form input,
 .order-page .flex-holder .page-content-order .order-form textarea {
-  width: 80%;
+  width: 100%;
   height: 1.9rem;
   display: block;
   border: none;
@@ -1693,6 +1695,13 @@ article .page-content .envelope {
 }
 
 .empty-cart-holder {
+  margin: 14rem auto 0;
+  width: 60%;
+  background-color: #f4f4f4;
+  padding: 6rem 2rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);
+          box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1708,6 +1717,11 @@ article .page-content .envelope {
           flex-direction: column;
 }
 
+.empty-cart-holder h2 {
+  margin: 0;
+  text-align: center;
+}
+
 .empty-cart-holder a {
   display: block;
   text-align: center;
@@ -1718,6 +1732,7 @@ article .page-content .envelope {
   color: #0B60E7;
   font-size: 3rem;
   display: block;
+  margin: 2rem 0;
 }
 
 .success {
@@ -1817,6 +1832,10 @@ article .page-content .envelope {
   .order-page .flex-holder .page-content-order .order-btn {
     margin: 0 auto;
   }
+
+  .empty-cart-holder {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 548px) {
@@ -1851,6 +1870,18 @@ article .page-content .envelope {
 
   .order-page .flex-holder .page-content-order {
     padding: 2rem 0;
+  }
+
+  .empty-cart-holder {
+    margin: 0 auto;
+  }
+
+  .empty-cart-holder h2 {
+    font-size: 1.5em;
+  }
+
+  .empty-cart-holder a {
+    font-size: 1.2em;
   }
 
   .success {

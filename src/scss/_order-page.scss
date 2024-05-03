@@ -58,12 +58,11 @@
             display: flex;
             flex-direction: column;
             row-gap: 1.56rem;
-            // width: 100%;
-            // padding: 0 1rem;
+            width: 100%;
+            padding: 0 1rem;
             input,
             textarea {
-               // @include size(100%, 1.9rem);
-               @include size(80%, 1.9rem);
+               @include size(100%, 1.9rem);
                display: block;
                border: none;
                outline: none;
@@ -107,6 +106,16 @@
 }
 
 .empty-cart-holder {
+   margin: 14rem auto 0;
+   width: 60%;
+   background-color: #f4f4f4;
+   padding: 6rem 2rem;
+   border-radius: .5rem;
+   box-shadow: $box-shadow-main;
+   h2 {
+      margin: 0;
+      text-align: center;
+   }
    @include flexCenter(column);
    a {
       display: block;
@@ -117,6 +126,7 @@
          color: $hover-main-color;
          font-size: 3rem;
          display: block;
+         margin: 2rem 0;
       }
    }
 }

@@ -62,7 +62,8 @@
             // padding: 0 1rem;
             input,
             textarea {
-               @include size(100%, 1.9rem);
+               // @include size(100%, 1.9rem);
+               @include size(80%, 1.9rem);
                display: block;
                border: none;
                outline: none;

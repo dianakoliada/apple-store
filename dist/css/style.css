@@ -1620,7 +1620,7 @@ article .page-content .envelope {
 
 .order-page .flex-holder .page-content-order .order-form input,
 .order-page .flex-holder .page-content-order .order-form textarea {
-  width: 100%;
+  width: 80%;
   height: 1.9rem;
   display: block;
   border: none;

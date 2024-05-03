@@ -1616,8 +1616,6 @@ article .page-content .envelope {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 1.56rem;
-  width: 100%;
-  padding: 0 1rem;
 }
 
 .order-page .flex-holder .page-content-order .order-form input,
@@ -1664,7 +1662,6 @@ article .page-content .envelope {
 
 .order-page .flex-holder .page-content-order .order-form input:focus,
 .order-page .flex-holder .page-content-order .order-form textarea:focus {
-  resize: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
           box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

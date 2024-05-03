@@ -8,25 +8,20 @@ main {
          .catalog__select-category {
             position: relative;
             .dropdown-btn {
-               color: $secondary-color;
-               cursor: pointer;
-               position: relative;
-               z-index: 2;
-               padding-right: 1.75rem;
                display: flex;
                align-items: flex-start;
+               padding-right: 1.75rem;
+               color: $secondary-color;
                font-size: 1.6rem;
                font-weight: weight(bold);
-               &::after {
-                  @include positionTopLeft(absolute, -6px, 8.81rem, 0);
-                  content: '\203A';
-                  transform: rotate(90deg);
-                  font-size: 150%;
-                  font-weight: weight(bold);
-               }
+            }
+            .icon {
+               @include positionTopRight(absolute, 1.69rem, 0, 2);
+               font-size: 1.6rem;
+               cursor: pointer;
             }
             .dropdown-content {
-               @include positionTopLeft(absolute, 3rem, 0, 1);
+               @include positionTopLeft(absolute, 3rem, .68rem, 1);
                transition: 0.25s;
                opacity: 1;
                transform: scale(0);

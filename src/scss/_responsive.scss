@@ -54,6 +54,11 @@
 }
 
 @include media-sm {
+   header {
+      .navigation__hold {
+         padding: 1rem .8rem;
+      }
+   }
    .catalog__header {
       flex-direction: column;
       align-items: center;
@@ -65,12 +70,6 @@
    .email {
       strong {
          display: none;
-      }
-   }
-   footer {
-      margin-top: 4rem;
-      .navbar-nav {
-         flex-direction: column;
       }
    }
    .order-page {
@@ -92,6 +91,12 @@
       }
       p {
          font-size: .8em;
+      }
+   }
+   footer {
+      margin-top: 4rem;
+      .navbar-nav {
+         flex-direction: column;
       }
    }
 }

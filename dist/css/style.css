@@ -1480,17 +1480,6 @@ article .page-content .envelope {
 
 .input-group .input {
   width: 100%;
-  height: 3rem;
-  padding: 0 1rem 0 2.5rem;
-  border: 2px solid transparent;
-  border-radius: 0.5rem;
-  outline: none;
-  background-color: #fff;
-  color: #000;
-  -webkit-box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);
-          box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
 }
 
 .input-group .input::-webkit-input-placeholder {
@@ -1660,6 +1649,12 @@ article .page-content .envelope {
   font-family: inherit;
   font-size: inherit;
   color: #dedede;
+}
+
+.order-page .flex-holder .page-content-order .order-form input:focus,
+.order-page .flex-holder .page-content-order .order-form textarea:focus {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .order-page .flex-holder .page-content-order .order-form textarea {

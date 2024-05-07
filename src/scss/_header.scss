@@ -1,10 +1,7 @@
 header {
+   @include positionTopLeft(fixed, 0, 0, 9);
    width: 100%;
-   position: fixed;
-   top: 0;
-   left: 0;
-   z-index: 9;
-   background-color: $main-color;
+   background-color: $secondary-bg-color;
    box-shadow: $box-shadow-main;
    .navigation__hold {
       display: flex;
@@ -81,6 +78,12 @@ header {
                }
                .icon-cart-bag {
                   @include size(1.2em, 1.2em);
+               }
+            }
+            .theme-toggle {
+               .icon-theme {
+                  width: 1.875rem;
+                  cursor: pointer;
                }
             }
          }

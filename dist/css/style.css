@@ -221,12 +221,11 @@ table {
 
 body {
   background-color: #fff;
+  color: #444448;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.6;
-  height: 100vh;
-  color: #444448;
   position: relative;
 }
 
@@ -287,7 +286,7 @@ svg {
   line-height: 3rem;
 }
 
-.world-wrap {
+.no-word-wrap {
   white-space: nowrap;
 }
 
@@ -361,7 +360,7 @@ svg {
   height: 2.5rem;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  background-color: rgba(0, 98, 255, 0.8196078431);
+  background-color: #444448;
   color: #fff;
   border-radius: 0.5rem;
   border: 1px solid transparent;
@@ -417,12 +416,12 @@ svg {
 }
 
 header {
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9;
-  background-color: #fff;
+  width: 100%;
+  background-color: #f7f7f7;
   -webkit-box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);
           box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);
 }
@@ -566,6 +565,11 @@ header .navigation__hold .navigation__right .navigation__item-list .navigation__
 header .navigation__hold .navigation__right .navigation__item-list .navigation__item-link .icon-cart-bag {
   width: 1.2em;
   height: 1.2em;
+}
+
+header .navigation__hold .navigation__right .navigation__item-list .theme-toggle .icon-theme {
+  width: 1.875rem;
+  cursor: pointer;
 }
 
 header .navigation__hold .navigation__middle {
@@ -724,6 +728,7 @@ main .catalog .catalog__header .catalog__products-sum {
 }
 
 main .catalog .catalog__content .card-product {
+  background-color: #fff;
   max-width: 15.7rem;
 }
 
@@ -1001,10 +1006,11 @@ main .gallery .gallery__item-img {
   position: relative;
   z-index: 2;
   outline: none;
+  cursor: pointer;
 }
 
 .cart-added-list .cart-added-list__btn:hover {
-  background-color: #6C798E;
+  background-color: #0B60E7;
 }
 
 .cart-added-list .cart-added-list__btn:focus {
@@ -1105,7 +1111,7 @@ main .gallery .gallery__item-img {
 }
 
 .cart-added-list .cart-added-list__item-list .cart-added-list__item .cart-added-list__item-text-hold .cart-added-list__item-meta-list .cart-added-list__item-meta {
-  color: #6C798E;
+  color: #000;
   font-size: 0.75rem;
   font-weight: 500;
 }
@@ -1113,7 +1119,7 @@ main .gallery .gallery__item-img {
 .cart-added-list .cart-added-list__item-list .cart-added-list__item .cart-added-list__item-btn-delete,
 .cart-added-list .cart-added-list__item-list .cart-added-list__item .cart-added-list__item-btn-plus,
 .cart-added-list .cart-added-list__item-list .cart-added-list__item .cart-added-list__item-btn-minus {
-  color: #6C798E;
+  color: #000;
   cursor: pointer;
   position: absolute;
   border: none;
@@ -1128,6 +1134,7 @@ main .gallery .gallery__item-img {
 .cart-added-list .cart-added-list__item-list .cart-added-list__item .cart-added-list__item-btn-delete {
   width: 1.3rem;
   height: 1.3rem;
+  background-color: #f7f7f7;
   border-radius: 6px 0 7px 0;
 }
 
@@ -1152,7 +1159,7 @@ main .gallery .gallery__item-img {
   z-index: 0;
   font-size: 1rem;
   font-weight: 600;
-  color: #6C798E;
+  color: #000;
   text-align: center;
 }
 
@@ -1253,7 +1260,7 @@ footer .footer__social .social .youtube {
 }
 
 footer .footer__copyright {
-  color: #999;
+  color: #000;
   font-size: 0.75rem;
   padding-top: 1.25rem;
   margin: 0;
@@ -1395,9 +1402,10 @@ footer .footer__copyright .footer__developer {
 
 .slide-container .slide-content .card .card-content .description {
   font-size: 0.9rem;
-  color: #707070;
+  color: #444448;
   text-align: center;
   padding-bottom: 1rem;
+  font-weight: 400;
 }
 
 .slide-container .swiper-nav-btn {
@@ -1435,11 +1443,10 @@ footer .footer__copyright .footer__developer {
 article {
   margin-top: 10rem;
   color: #000;
-  background-color: #fff;
 }
 
 article .page-content {
-  background-color: #f4f4f4;
+  background-color: #f7f7f7;
   padding: 2rem;
 }
 
@@ -1475,6 +1482,7 @@ article .page-content .envelope {
 .input-group {
   margin: 10rem 0 -6.8rem 0;
   position: relative;
+  max-width: 100%;
   width: 100%;
 }
 
@@ -1544,7 +1552,7 @@ article .page-content .envelope {
 .order-page .flex-holder .page-content-order,
 .order-page .flex-holder .page-content-info {
   width: 49%;
-  background-color: #f4f4f4;
+  background-color: #f7f7f7;
   padding: 1.9rem;
   border-radius: 0.5rem;
   -webkit-box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);
@@ -1687,6 +1695,7 @@ article .page-content .envelope {
   border: none;
   outline: none;
   width: 100%;
+  background-color: #0B60E7;
 }
 
 .empty-cart-holder {
@@ -1774,7 +1783,7 @@ article .page-content .envelope {
     -webkit-transform: scale(0);
         -ms-transform: scale(0);
             transform: scale(0);
-    padding: 2rem 1rem;
+    padding: 1rem;
     background-color: #fff;
     min-width: 12rem;
     -webkit-box-shadow: 0 5px 22px 0 rgba(208, 219, 229, 0.62), 0 2px 3px 0 rgba(107, 132, 160, 0.18), 0 5px 5px 0 rgba(237, 239, 242, 0.36);

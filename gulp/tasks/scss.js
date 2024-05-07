@@ -2,6 +2,7 @@ import dartSass from 'sass';
 import gulpSaas from 'gulp-sass';
 import rename from 'gulp-rename';
 import concat from 'gulp-concat';
+import plumber from 'gulp-plumber';
 
 import cleanCss from 'gulp-clean-css';
 import webpcss from 'gulp-webpcss';
@@ -12,8 +13,10 @@ const sass = gulpSaas(dartSass);
 
 export const scss = () => {
    return app.gulp.src(app.path.src.scss, { sourcemaps: true })
+      .pipe(plumber())
       .pipe(sass({
-         outputStyle: 'expanded'
+         outputStyle: 'expanded',
+         errLogToConsole: true
       }))
       .pipe(groupCssMediaQueries())
       .pipe(webpcss(

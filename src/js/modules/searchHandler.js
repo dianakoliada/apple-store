@@ -5,7 +5,7 @@ import * as html from './render.js';
 const inputSearch = document.getElementById('js-input-search');
 let idTimeout = 0;
 
-function fetchSearchedProducts(inputValue) {
+const fetchSearchedProducts = (inputValue) => {
    html.productCardsHolder.innerHTML = '';
 
    api.fetchData(api.APISearch + inputValue)
@@ -21,7 +21,7 @@ function fetchSearchedProducts(inputValue) {
       })
 }
 
-function searchProducts(e) {
+const searchProducts = (e) => {
    clearTimeout(idTimeout);
 
    idTimeout = setTimeout(() => {

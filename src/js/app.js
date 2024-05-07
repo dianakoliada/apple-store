@@ -7,6 +7,11 @@ import * as cart from './modules/cartHandler.js';
 import * as search from './modules/searchHandler.js';
 import * as order from './modules/orderHandler.js';
 
+const iconThemeMode = document.getElementById('js-dark-mode');
+iconThemeMode.addEventListener('click', () => {
+   document.body.classList.toggle('dark-mode');
+})
+
 //loading spinner
 window.addEventListener('load', () => {
    const loadContainer = document.getElementById('loading-container');
@@ -18,13 +23,13 @@ const burgerBtn = document.getElementById('js-burger');
 const menuNav = document.getElementById('js-menu');
 const navItems = document.querySelectorAll('.menu-btn__burger');
 
-burgerBtn.addEventListener('click', function () {
+burgerBtn.addEventListener('click', () => {
    menuNav.classList.toggle('show');
    navItems.forEach((item) => item.classList.toggle('open'));
 });
 
 //getting api data (categories, goods)
-(async function () {
+(async () => {
    const data = await api.fetchData(api.APICategoties);
    if (data && html.categoryHolder) {
       html.categoryHolder.insertAdjacentHTML('beforeend',
@@ -35,7 +40,7 @@ burgerBtn.addEventListener('click', function () {
    }
 })();
 
-(async function () {
+(async () => {
    const data = await api.fetchData(api.APICatalog);
    if (data && html.productCardsHolder) {
       utils.processAPIData(data, html.productCardsHolder,
@@ -44,7 +49,7 @@ burgerBtn.addEventListener('click', function () {
    }
 })();
 
-(async function () {
+(async () => {
    const data = await api.fetchData(api.APICatalogHotOffers);
    if (data && html.hotOffersCardsHolder) {
       utils.processAPIData(data, html.hotOffersCardsHolder,
@@ -76,7 +81,7 @@ if (order.form) {
    order.form.addEventListener('submit', e => {
       e.preventDefault();
 
-      // order.orderPageHolder.innerHTML = '';
+      order.orderPageWrap.classList.add('hide');
       order.orderPageHolder.insertAdjacentHTML('beforeend',
          html.getOrderSuccessHTML(order.orderNumber));
    })

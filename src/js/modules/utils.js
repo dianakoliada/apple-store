@@ -1,16 +1,16 @@
-function saveToLocalStorage(key, value) {
+const saveToLocalStorage = (key, value) => {
    localStorage.setItem(key, JSON.stringify(value));
 }
 
-function getFromLocalStorage(key) {
+const getFromLocalStorage = (key) => {
    return JSON.parse(localStorage.getItem(key)) ?? [];
 }
 
-function isProductInCart(cart, productId) {
+const isProductInCart = (cart, productId) => {
    return cart.some(el => el.id === productId);
 }
 
-function processAPIData(data, container, getHTMLfunc) {
+const processAPIData = (data, container, getHTMLfunc) => {
    if (data) {
       data.forEach((item) => {
          container.insertAdjacentHTML('beforeend', getHTMLfunc(item));
@@ -18,7 +18,7 @@ function processAPIData(data, container, getHTMLfunc) {
    }
 }
 
-function addEventListenerIfAvailable(el, event, handler) {
+const addEventListenerIfAvailable = (el, event, handler) => {
    if (el) {
       el.addEventListener(event, handler);
    }

@@ -11,16 +11,16 @@
          div {
             @include size(2.2rem, 2.2rem);
             border-radius: 100%;
-            border-right: solid 5px $hover-main-color;
-            border-left: solid 5px $footer-bg-color;
-            border-top: solid 5px $footer-bg-color;
-            border-bottom: solid 5px $footer-bg-color;
+            border-right: solid 5px $hover-color;
+            border-left: solid 5px $secondary-bg-color;
+            border-top: solid 5px $secondary-bg-color;
+            border-bottom: solid 5px $secondary-bg-color;
             animation: spinner 1.5s infinite;
          }
       }
       p {
          text-align: center;
-         color: $hover-main-color;
+         color: $hover-color;
       }
    }
 }

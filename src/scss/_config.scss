@@ -1,11 +1,18 @@
-$main-color: #fff;
+$primary-bg-color: #fff;
+$secondary-bg-color: #f7f7f7;
 $primary-color: #000;
 $secondary-color: #444448;
-$footer-bg-color: #f7f7f7;
-$hover-main-color: #0B60E7;
+
+// $primary-bg-color: #000;
+// $secondary-bg-color: #444448;
+// $primary-color: #f7f7f7;
+// $secondary-color: #fff;
+
+$hover-color: #0B60E7;
 $font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $box-shadow-main: 0 5px 22px 0 rgba(208, 219, 229, .62), 0 2px 3px 0 rgba(107, 132, 160, .18), 0 5px 5px 0 rgba(237, 239, 242, .36);
 $font-weights: (
+   "normal": 400,
    "regular": 500,
    "medium": 600,
    "bold": 700

@@ -26,7 +26,7 @@ main {
                opacity: 1;
                transform: scale(0);
                padding: 1rem .875rem;
-               background-color: $main-color;
+               background-color: $primary-bg-color;
                min-width: 10rem;
                box-shadow: $box-shadow-main;
                border-radius: .9rem;
@@ -54,6 +54,7 @@ main {
       }
       .catalog__content {
          .card-product {
+            background-color: $primary-bg-color;
             max-width: 15.7rem;
          }
       }
@@ -95,7 +96,7 @@ main {
          transition: .45s;
          font-size: 1.25rem;
          text-shadow: 0 0 15px rgba(254, 254, 254, 0.8);
-         color: $main-color;
+         color: $primary-bg-color;
          opacity: 0;
          &:hover {
             opacity: 1;
@@ -120,7 +121,7 @@ main {
       .card-product {
          @include flexCenter(column);
          padding: 0 .9rem;
-         background-color: $main-color;
+         background-color: $primary-bg-color;
          box-shadow: $box-shadow-main;
          position: relative;
          .card-product__img-hold {

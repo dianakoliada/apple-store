@@ -8,21 +8,21 @@ let cartCount = document.querySelectorAll('.js-cart-count');
 
 const cartList = utils.getFromLocalStorage('cartList');
 
-function toggleCartBtn() {
-   cartListHolder.classList.toggle('show');
+const toggleCartBtn = () => {
+   return cartListHolder.classList.toggle('show');
 }
 
-function displayCartCount(array) {
+const displayCartCount = (array) => {
    let totalCount = 0;
 
    for (let item of array) {
       totalCount += parseInt(item.count);
    }
 
-   cartCount.forEach(el => el.innerHTML = totalCount);
+   return cartCount.forEach(el => el.innerHTML = totalCount);
 }
 
-function displayCartList(array) {
+const displayCartList = (array) => {
    if (cartListHolder) {
       cartListHolder.innerHTML = '';
    }
@@ -41,7 +41,7 @@ function displayCartList(array) {
    }
 }
 
-function addProductToCart(item) {
+const addProductToCart = (item) => {
    const productInfo = item.dataset;
 
    if (utils.isProductInCart(cartList, productInfo.id)) {
@@ -54,7 +54,7 @@ function addProductToCart(item) {
    displayCartCount(cartList);
 }
 
-function removeProductFromCart(item) {
+const removeProductFromCart = (item) => {
    const idToRemove = item.dataset.index;
    cartList.splice(idToRemove, 1);
 
@@ -63,7 +63,7 @@ function removeProductFromCart(item) {
    displayCartCount(cartList);
 }
 
-function changeProductCartCount(item) {
+const changeProductCartCount = (item) => {
    const btnTypeValue = item.getAttribute('data-type');
    const dataInputValue = item.getAttribute('data-count');
    let input = document.querySelector(dataInputValue);
@@ -81,7 +81,7 @@ function changeProductCartCount(item) {
    displayCartCount(cartList);
 }
 
-function handleCartClicks(e) {
+const handleCartClicks = (e) => {
    let clickedEl = e.target;
 
    if (clickedEl.classList.contains('js-icon-cart') && clickedEl.classList.contains('js-icon-delete') && clickedEl.classList.contains('js-count-icon')) {

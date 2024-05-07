@@ -1,7 +1,7 @@
 .input-group {
    margin: 10rem 0 -6.8rem 0;
    position: relative;
-   // max-width: 100%;
+   max-width: 100%;
    width: 100%;
    .input {
       @include transition-ease;
@@ -11,7 +11,7 @@
       border: 2px solid transparent;
       border-radius: .5rem;
       outline: none;
-      background-color: $main-color;
+      background-color: $primary-bg-color;
       color: $primary-color;
       box-shadow: $box-shadow-main;
    }

@@ -1,7 +1,6 @@
    Задачі
-   order page footer
+   order page form
    світла/темна теми
-   анімація при зміні сторінки
 
 
 

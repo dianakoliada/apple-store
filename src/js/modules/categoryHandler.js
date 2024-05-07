@@ -5,7 +5,7 @@ import * as html from './render.js';
 const categoryBtn = document.getElementById('js-category-btn');
 const categoryList = document.getElementById('js-category-list');
 
-function displayCategoryProducts(e) {
+const displayCategoryProducts = (e) => {
    e.preventDefault();
 
    const category = e.target;
@@ -30,7 +30,7 @@ function displayCategoryProducts(e) {
       });
 }
 
-function toggleCategoryList() {
+const toggleCategoryList = () => {
    categoryList.classList.toggle('show');
 }
 

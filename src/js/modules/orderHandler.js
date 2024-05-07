@@ -1,14 +1,16 @@
 import * as cart from './cartHandler.js';
 import * as html from './render.js';
 
+const orderPageHolder = document.getElementById('js-order-page-holder');
+const orderPageWrap = document.getElementById('js-order-block-holder');
 const orderTotalHolder = document.getElementById('js-order-total');
-const orderPageHolder = document.getElementById('js-order-page');
 const phoneInput = document.getElementById('phone');
 let errorMessage = document.getElementById('error-message');
 const formHolder = document.getElementById('js-form-holder');
 const form = document.getElementById('js-form');
 
-function getOrderTotalSum() {
+
+const getOrderTotalSum = () => {
    let totalSum = 0;
 
    for (let item of cart.cartList) {
@@ -17,7 +19,7 @@ function getOrderTotalSum() {
    return totalSum.toFixed(2);
 }
 
-function displayOrderList(array) {
+const displayOrderList = (array) => {
    if (orderTotalHolder) {
       orderTotalHolder.innerHTML = '';
    }
@@ -35,20 +37,22 @@ function displayOrderList(array) {
    }
 }
 
-function onTypeTelHandler(e) {
+const onTypeTelHandler = (e) => {
    let key = e.key;
 
    if (!(key >= '0' && key <= '9') && !['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete'].includes(key)) {
       e.preventDefault();
 
+      errorMessage.classList.remove('hide');
       errorMessage.innerText = 'Please, enter your phone number';
    } else {
       errorMessage.innerText = '';
    }
 }
 
-function checkTypeTelAmount() {
+const checkTypeTelAmount = () => {
    if (phoneInput.value.length < 12 && phoneInput.value.length > 0) {
+      errorMessage.classList.remove('hide');
       errorMessage.innerText = 'The phone number should contain exactly 12 digits';
       phoneInput.style.border = "1px solid red";
    } else {
@@ -57,7 +61,7 @@ function checkTypeTelAmount() {
    }
 }
 
-function generateOrderNumber() {
+const generateOrderNumber = () => {
    let randomNum = Math.floor(Math.random() * 1000);
    let orderNum = `${randomNum}`.padStart(3, '0');
    return orderNum;
@@ -66,4 +70,4 @@ let orderNumber = generateOrderNumber();
 
 displayOrderList(cart.cartList);
 
-export { displayOrderList, onTypeTelHandler, checkTypeTelAmount, phoneInput, orderPageHolder, form, errorMessage, orderNumber };
+export { displayOrderList, onTypeTelHandler, checkTypeTelAmount, phoneInput, orderPageHolder, form, errorMessage, orderNumber, formHolder, orderTotalHolder, orderPageWrap };

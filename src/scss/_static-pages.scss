@@ -1,9 +1,9 @@
 article {
    margin-top: 10rem;
    color: $primary-color;
-   background-color: $main-color;
+   // background-color: $primary-bg-color;
    .page-content {
-      background-color: #f4f4f4;
+      background-color: $secondary-bg-color;
       padding: 2rem;
       & > p:first-child {
          text-align: center;
@@ -26,7 +26,7 @@ article {
       }
       .heart,
       .envelope {
-         color: $hover-main-color;
+         color: $hover-color;
       }
    }
 }

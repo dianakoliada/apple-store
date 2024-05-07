@@ -1,5 +1,5 @@
 .order-page {
-   margin-top: 10rem;
+   margin-top: 13rem;
    .flex-holder {
       width: 100%;
       display: flex;
@@ -109,10 +109,8 @@
 .empty-cart-holder {
    margin: 14rem auto 0;
    width: 60%;
-   background-color: getColor(secondary-bg-color);
    padding: 6rem 2rem;
    border-radius: .5rem;
-   box-shadow: $box-shadow-main;
    h2 {
       margin: 0;
       text-align: center;

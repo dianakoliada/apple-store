@@ -1,7 +1,7 @@
 header {
    @include positionTopLeft(fixed, 0, 0, 9);
    width: 100%;
-   background-color: $secondary-bg-color;
+   background-color: getColor(secondary-bg-color);
    box-shadow: $box-shadow-main;
    .navigation__hold {
       display: flex;
@@ -25,20 +25,20 @@ header {
                @include positionTopRight(absolute, .5rem, 0, 0);
                @include transition-ease;
                @include size(1.75rem, 3px);
-               background-color: $secondary-color;
+               background-color: getColor(secondary-color);
                &::before {
                   content: '';
                   @include positionTopLeft(absolute, -.5rem, 0, 0);
                   @include transition-ease;
                   @include size(1.75rem, 3px);
-                  background-color: $secondary-color;
+                  background-color: getColor(secondary-color);
                }
                &::after {
                   @include positionTopLeft(absolute, .5rem, 0, 0);
                   @include transition-ease;
                   @include size(1.25rem, 3px);
                   content: '';
-                  background-color: $secondary-color;
+                  background-color: getColor(secondary-color);
                }
                &.open {
                   transform: rotate(720deg);

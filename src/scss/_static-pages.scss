@@ -1,9 +1,8 @@
 article {
    margin-top: 10rem;
-   color: $primary-color;
-   // background-color: $primary-bg-color;
+   color: getColor(primary-color);
    .page-content {
-      background-color: $secondary-bg-color;
+      background-color: getColor(secondary-bg-color);
       padding: 2rem;
       & > p:first-child {
          text-align: center;
@@ -22,7 +21,7 @@ article {
          margin: 0 .3rem 0 1rem;
          font-size: 1.2em;
          cursor: pointer;
-         color: $secondary-color;
+         color: getColor(secondary-color);
       }
       .heart,
       .envelope {

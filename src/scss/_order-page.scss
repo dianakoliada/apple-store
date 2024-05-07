@@ -9,7 +9,7 @@
       .page-content-order,
       .page-content-info {
          width: 49%;
-         background-color: $secondary-bg-color;
+         background-color: getColor(secondary-bg-color);
          padding: 1.9rem;
          border-radius: .5rem;
          box-shadow: $box-shadow-main;
@@ -95,8 +95,11 @@
                border: none;
                outline: none;
                width: 100%;
-               // color: $primary-color;
-               background-color: $hover-color;
+               background-color: #4187f7;
+               color: #fff;
+               &:hover {
+                  background-color: $hover-color;
+               }
             }
          }
       }
@@ -106,7 +109,7 @@
 .empty-cart-holder {
    margin: 14rem auto 0;
    width: 60%;
-   background-color: #f4f4f4;
+   background-color: getColor(secondary-bg-color);
    padding: 6rem 2rem;
    border-radius: .5rem;
    box-shadow: $box-shadow-main;

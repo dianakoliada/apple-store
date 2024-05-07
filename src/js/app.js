@@ -7,11 +7,6 @@ import * as cart from './modules/cartHandler.js';
 import * as search from './modules/searchHandler.js';
 import * as order from './modules/orderHandler.js';
 
-const iconThemeMode = document.getElementById('js-dark-mode');
-iconThemeMode.addEventListener('click', () => {
-   document.body.classList.toggle('dark-mode');
-})
-
 //loading spinner
 window.addEventListener('load', () => {
    const loadContainer = document.getElementById('loading-container');

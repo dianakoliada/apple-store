@@ -11,7 +11,7 @@ main {
                display: flex;
                align-items: flex-start;
                padding-right: 1.75rem;
-               color: $secondary-color;
+               color: getColor(secondary-color);
                font-size: 1.6rem;
                font-weight: weight(bold);
             }
@@ -26,7 +26,7 @@ main {
                opacity: 1;
                transform: scale(0);
                padding: 1rem .875rem;
-               background-color: $primary-bg-color;
+               background-color: getColor(primary-bg-color);
                min-width: 10rem;
                box-shadow: $box-shadow-main;
                border-radius: .9rem;
@@ -47,14 +47,14 @@ main {
             }
          }
          .catalog__products-sum {
-            color: $secondary-color;
+            color: getColor(secondary-color);
             font-size: 1.3rem;
             font-weight: weight(bold);
          }
       }
       .catalog__content {
          .card-product {
-            background-color: $primary-bg-color;
+            background-color: getColor(primary-bg-color);
             max-width: 15.7rem;
          }
       }
@@ -96,7 +96,7 @@ main {
          transition: .45s;
          font-size: 1.25rem;
          text-shadow: 0 0 15px rgba(254, 254, 254, 0.8);
-         color: $primary-bg-color;
+         color: getColor(primary-bg-color);
          opacity: 0;
          &:hover {
             opacity: 1;
@@ -121,7 +121,7 @@ main {
       .card-product {
          @include flexCenter(column);
          padding: 0 .9rem;
-         background-color: $primary-bg-color;
+         background-color: getColor(primary-bg-color);
          box-shadow: $box-shadow-main;
          position: relative;
          .card-product__img-hold {
@@ -146,7 +146,7 @@ main {
             }
             .card-product__price {
                font-size: .8rem;
-               color: #6C798E;
+               color: getColor(secondary-color);
                font-weight: weight(regular);
                small {
                   position: relative;

@@ -6,8 +6,8 @@
 }
 
 body {
-   background-color: $primary-bg-color;
-   color: $secondary-color;
+   background-color: getColor(primary-bg-color);
+   color: getColor(secondary-color);
    font-family: $font-stack;
    font-size: 1rem;
    font-weight: weight(regular);
@@ -30,12 +30,11 @@ h3 {
 }
 
 a {
-   color: $secondary-color;
+   color: getColor(secondary-color);
    text-decoration: none;
    display: inline-flex;
    transition: .25s;
    font-size: 1.1rem;
-
    &:hover {
       color: $hover-color;
    }
@@ -104,15 +103,15 @@ svg {
    @include flexCenter(row);
    @include size(80%, 2.5rem);
    @include transition-ease;
-   background-color: $secondary-color;
-   color: $primary-bg-color;
+   background-color: getColor(secondary-color);
+   color: getColor(primary-bg-color);
    border-radius: .5rem;
    border: 1px solid transparent;
    font-size: 1.25rem;
    cursor: pointer;
    &:hover {
       background-color: $hover-color;
-      color: $primary-bg-color;
+      color: #fff;
    }
 } 
 
@@ -134,7 +133,7 @@ svg {
 }
 .no-result {
    font-size: 1.3rem;
-   color: #6C798E;
+   color: getColor(secondary-color);
    margin: 0;
    padding: 0;
 }

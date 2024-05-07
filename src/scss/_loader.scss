@@ -12,9 +12,9 @@
             @include size(2.2rem, 2.2rem);
             border-radius: 100%;
             border-right: solid 5px $hover-color;
-            border-left: solid 5px $secondary-bg-color;
-            border-top: solid 5px $secondary-bg-color;
-            border-bottom: solid 5px $secondary-bg-color;
+            border-left: solid 5px getColor(secondary-bg-color);
+            border-top: solid 5px getColor(secondary-bg-color);
+            border-bottom: solid 5px getColor(secondary-bg-color);
             animation: spinner 1.5s infinite;
          }
       }

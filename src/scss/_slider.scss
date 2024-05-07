@@ -3,7 +3,7 @@
    width: 100%;
    padding: 3rem 1rem;
    margin: 1rem auto;
-   background-color: $primary-bg-color;
+   background-color: getColor(primary-bg-color);
    .title-square {
       margin-bottom: 3rem;
    }
@@ -14,7 +14,7 @@
       border-radius: 1.6rem;
       .card {
          border-radius: 1.6rem;
-         background-color: $secondary-bg-color;
+         background-color: getColor(secondary-bg-color);
          margin: 1rem  auto;
          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
          .image-content,
@@ -48,14 +48,14 @@
                &::after {
                   width: 2.56rem;
                   border-radius: 0 1.6rem 0 0;
-                  background-color: $secondary-bg-color;
+                  background-color: getColor(secondary-bg-color);
                }
             }
             .card-image {
                @include size(9.4rem, 9.4rem);
                position: relative;
                border-radius: 50%;
-               background: $secondary-bg-color;
+               background: getColor(secondary-bg-color);
                padding: 3px;
                .card-img {
                   @include size(100%, 100%);
@@ -71,11 +71,11 @@
             .name {
                font-size: 1.1rem;
                font-weight: weight(regular);
-               color: $secondary-color;
+               color: getColor(secondary-color);
             }
             .description {
                font-size: .9rem;
-               color: $secondary-color;
+               color: getColor(secondary-color);
                text-align: center;
                padding-bottom: 1rem;
                font-weight: weight(normal);

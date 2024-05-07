@@ -14,7 +14,7 @@
                   opacity: 1;
                   transform: scale(0);
                   padding: 1rem;
-                  background-color: $primary-bg-color;
+                  background-color: getColor(primary-bg-color);
                   min-width: 12rem;
                   box-shadow: $box-shadow-main;
                   border-radius: .9rem;

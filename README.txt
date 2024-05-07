@@ -1,6 +1,9 @@
    Задачі
    order page form
-   світла/темна теми
+   видалити розширенний css
+   w3s validation
+   google page speed
+   tiny png?
 
 
 

@@ -79,6 +79,7 @@ if (order.form) {
       order.orderPageWrap.classList.add('hide');
       order.orderPageHolder.insertAdjacentHTML('beforeend',
          html.getOrderSuccessHTML(order.orderNumber));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
    })
 }
 

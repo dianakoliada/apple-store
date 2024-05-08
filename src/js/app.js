@@ -13,6 +13,15 @@ window.addEventListener('load', () => {
    loadContainer.classList.add('end-loading');
 })
 
+//active page
+const activePage = window.location.pathname;
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+   if (link.href.includes(`${activePage}`)) {
+      link.classList.add('active');
+   }
+})
+
 //burgerMenu toggle
 const burgerBtn = document.getElementById('js-burger');
 const menuNav = document.getElementById('js-menu');

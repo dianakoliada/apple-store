@@ -29,15 +29,22 @@ h3 {
    margin: 1rem 0 .5rem;
 }
 
+input,
+textarea {
+   font-size: 1rem;
+}
+
 a {
    color: getColor(secondary-color);
    text-decoration: none;
    display: inline-flex;
-   transition: .25s;
    font-size: 1.1rem;
-   &:hover {
-      color: $hover-color;
-   }
+}
+
+.active {
+   background-color: getColor(secondary-color);
+   color: getColor(primary-bg-color);
+   padding: 0 .3rem;
 }
 
 svg {

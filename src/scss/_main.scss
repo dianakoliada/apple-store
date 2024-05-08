@@ -96,7 +96,7 @@ main {
          transition: .45s;
          font-size: 1.25rem;
          text-shadow: 0 0 15px rgba(254, 254, 254, 0.8);
-         color: getColor(primary-bg-color);
+         color: #fff;
          opacity: 0;
          &:hover {
             opacity: 1;

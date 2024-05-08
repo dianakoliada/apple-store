@@ -28,7 +28,7 @@ const getProductsHTML = (img, id, title, price, oldprice) => {
          <img src="../src/img/catalog/${img}" alt="${title}" class="card-product__img js-product-img">
       </div>
       <div class="card-product__text-hold">
-         <a href="#" class="card-product__title-link">${title}</a>
+         <p href="#" class="card-product__title-link">${title}</p>
          <span class="card-product__price">${price} USD <small>${oldprice} USD</small></span>
          </div>
       <a href="#" class="btn js-icon-cart" data-id="${id}" data-title="${title}"

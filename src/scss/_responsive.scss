@@ -11,6 +11,7 @@
                   @include positionTopLeft(absolute, 19px, 23px, 4);
                   transition: 0.25s;
                   flex-direction: column;
+                  row-gap: .6rem;
                   opacity: 1;
                   transform: scale(0);
                   padding: 1rem;

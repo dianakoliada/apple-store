@@ -1641,6 +1641,7 @@ article .page-content .envelope {
 .order-page .flex-holder .page-content-order .order-form textarea {
   width: 100%;
   height: 1.9rem;
+  font-size: 1rem;
   display: block;
   border: none;
   outline: none;
